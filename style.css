@@ -450,13 +450,29 @@ h2 span,
   padding-block: clamp(3rem, 7vw, 6rem);
 }
 
-.contact .wrap { position: relative; }
+.contact .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(180px, 22vw, 280px);
+  grid-template-areas:
+    "title mascot"
+    "links links";
+  align-items: center;
+  gap: clamp(20px, 4vw, 40px) clamp(24px, 5vw, 72px);
+}
+
+.contact .wrap h2 { grid-area: title; }
+
+.contact .links {
+  grid-area: links;
+  margin-top: 0;
+}
 
 .footer-mascot {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: clamp(64px, 8vw, 108px);
+  grid-area: mascot;
+  position: static;
+  justify-self: center;
+  align-self: center;
+  width: clamp(180px, 22vw, 280px);
   height: auto;
 }
 
@@ -655,6 +671,21 @@ h2 span,
   }
 
   .hero-controls { bottom: 14px; }
+
+  .contact .wrap {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "mascot"
+      "links";
+    text-align: center;
+  }
+
+  .contact .footer-mascot {
+    width: min(200px, 58vw);
+  }
+
+  .contact .links { justify-content: center; }
 }
 
 @media (max-width: 800px) {
