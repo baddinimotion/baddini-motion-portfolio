@@ -138,8 +138,12 @@
           const year = project.year || '';
           const cover = project.cover || 'images/brand/Baddini_Avatar_1080x1080.png';
           const alt = project.title ? `Capa do projeto ${project.title}` : 'Capa do projeto';
+          const href = project.external && project.behance
+            ? project.behance
+            : `project.html?id=${encodeURIComponent(project.id)}`;
+          const externalAttributes = project.external ? ' target="_blank" rel="noopener"' : '';
           return `
-            <a class="card" data-cat="${category}" href="project.html?id=${encodeURIComponent(project.id)}">
+            <a class="card" data-cat="${category}" href="${href}"${externalAttributes}>
               <div class="cover">
                 <img src="${cover}" alt="${alt}" loading="lazy">
               </div>

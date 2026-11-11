@@ -240,7 +240,8 @@ async function syncBehanceProjects() {
         continue;
       }
 
-      const existingManual = safeExisting.find((project) => project.manual === true && project.behance === projectUrl);
+      const existingProject = safeExisting.find((project) => project && project.behance === projectUrl);
+      const existingManual = existingProject && existingProject.manual === true ? existingProject : null;
       if (existingManual) {
         collected.push(existingManual);
         continue;
@@ -283,7 +284,8 @@ async function syncBehanceProjects() {
         description: description || '',
         cover: localCoverRelative,
         behance: projectUrl,
-        modules: normalizedModules
+        modules: normalizedModules,
+        ...(existingProject && existingProject.external ? { external: true } : {})
       };
 
       if (!project.title || !project.behance || !project.cover) {

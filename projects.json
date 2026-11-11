@@ -31,7 +31,8 @@
         "type": "image",
         "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/cover.png"
       }
-    ]
+    ],
+    "external": true
   },
   {
     "id": "dot-energy-dot-energy",
