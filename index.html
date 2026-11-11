@@ -41,6 +41,7 @@
       </video>
       <div class="hero-wash" aria-hidden="true"></div>
       <img class="hero-mascot" src="images/brand/baddini-weirdo-transparente.svg" alt="BADDINI, o macaco The Weirdo">
+      <img class="hero-wordmark" src="images/brand/logo-offwhite.png" alt="BADDINI" height="40">
       <p class="hero-hint" aria-hidden="true">Passe o mouse para assistir</p>
       <div class="hero-controls" aria-label="Controles do showreel">
         <button class="video-control" id="video-toggle" type="button" aria-label="Pausar vídeo">Pausar</button>
@@ -62,7 +63,7 @@
 
     <section id="about" class="about wrap">
       <div class="about-heading">
-        <h2>Quem é<br>a Baddini?</h2>
+        <h2>Quem é<br>Baddini?</h2>
         <img class="about-mascot" src="images/brand/baddini-weirdo-transparente.svg" alt="BADDINI, o macaco The Weirdo" loading="lazy">
       </div>
       <div>
@@ -98,10 +99,10 @@
   <footer id="contact" class="contact">
     <div class="wrap">
       <h2>Let’s make<br>some noise.</h2>
-      <img class="footer-mascot" src="images/brand/Baddini_Avatar_1080x1080.png" alt="" loading="lazy">
+      <img class="footer-mascot" src="images/brand/Baddini_Cabeca_Transparente.png" alt="" loading="lazy">
       <div class="links">
         <a href="mailto:baddinimotion@outlook.com">baddinimotion@outlook.com ↗</a>
-        <a href="https://www.behance.net/baddinimotion" target="_blank" rel="noopener">Behance ↗</a>
+        <a href="https://www.behance.net/brunobaddini" target="_blank" rel="noopener">Behance ↗</a>
         <a href="https://www.linkedin.com/in/bruno-baddini-344754152/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
@@ -112,7 +113,7 @@
     const filters = document.getElementById('filters');
 
     function renderEmptyState() {
-      grid.innerHTML = '<p class="empty-state">Nenhum projeto publicado ainda. Rode o script de sincronização do Behance para carregar o grid.</p>';
+      grid.innerHTML = '<p class="empty-state">Nenhum projeto sincronizado. <a href="https://www.behance.net/brunobaddini" target="_blank" rel="noopener">Ver projetos no Behance ↗</a></p>';
     }
 
     fetch('projects.json')

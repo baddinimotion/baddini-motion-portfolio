@@ -20,6 +20,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: "Instrument Sans", Arial, sans-serif;
+  line-height: calc(1.5em + 5px);
 }
 
 a {
@@ -202,11 +203,25 @@ h2 span,
   pointer-events: none;
 }
 
+.hero-wordmark {
+  position: absolute;
+  z-index: 3;
+  bottom: 18px;
+  left: var(--pad);
+  width: min(190px, 40vw);
+  height: auto;
+  filter: drop-shadow(0 1px 5px rgba(17, 17, 17, .7));
+  opacity: 1;
+  transition: opacity 350ms ease;
+  pointer-events: none;
+}
+
 .hero-hint {
   position: absolute;
   z-index: 3;
   bottom: 24px;
-  left: var(--pad);
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
   color: var(--paper);
   font: 600 .72rem/1.5 var(--mono);
@@ -240,11 +255,13 @@ h2 span,
 .video-control:focus-visible { outline: 3px dashed var(--paper); outline-offset: 3px; }
 
 .hero-movie.is-watching .hero-mascot,
+.hero-movie.is-watching .hero-wordmark,
 .hero-movie.is-watching .hero-wash,
 .hero-movie.is-watching .hero-hint { opacity: 0; }
 
 @media (hover: hover) and (pointer: fine) {
   .hero-movie:hover .hero-mascot,
+  .hero-movie:hover .hero-wordmark,
   .hero-movie:hover .hero-wash,
   .hero-movie:hover .hero-hint { opacity: 0; }
 }
@@ -375,7 +392,7 @@ h2 span,
 .about p,
 .project p:not(.mono) {
   font-size: clamp(1.1rem, 2vw, 1.4rem);
-  line-height: 1.55;
+  line-height: calc(1.55em + 5px);
   margin: 0 0 1rem;
   max-width: 44ch;
 }
@@ -480,6 +497,11 @@ h2 span,
   opacity: .85;
   font-size: 1.05rem;
   padding: 2rem 0;
+}
+
+.empty-state a {
+  border-bottom: 1px solid currentColor;
+  color: var(--paper);
 }
 
 @media (max-width: 650px) {

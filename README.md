@@ -37,7 +37,7 @@ O arquivo `projects.json` usa esta estrutura:
     "tools": "After Effects, Premiere Pro",
     "description": "Descrição do projeto",
     "cover": "images/projects/slug-do-projeto/cover.jpg",
-    "behance": "https://www.behance.net/baddinimotion/slug-do-projeto",
+    "behance": "https://www.behance.net/brunobaddini/slug-do-projeto",
     "modules": [
       { "type": "image", "src": "images/projects/slug-do-projeto/01.jpg" },
       { "type": "video", "src": "https://player.vimeo.com/video/000000" }
@@ -55,7 +55,7 @@ O arquivo `projects.json` usa esta estrutura:
 ### Modo automático no GitHub Actions
 
 - O workflow `sync-behance.yml` roda a cada 6 horas e por `workflow_dispatch`.
-- O script `scripts/sync-behance.mjs` tenta buscar projetos públicos de `baddinimotion`.
+- O script `scripts/sync-behance.mjs` tenta buscar projetos públicos de `brunobaddini`.
 - Se a API ou o HTML do Behance bloquear a requisição, o script não sobrescreve o JSON e grava um log explicando o motivo.
 
 ### Modo local

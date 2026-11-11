@@ -63,9 +63,22 @@ function sanitizeUrl(value) {
 }
 
 function extractProjectLinks(html) {
-  const pattern = /(https:\/\/www\.behance\.net\/[^\s"'<>]+|https:\/\/www\.behance\.net\/gallery\/[^\s"'<>]+|https:\/\/www\.behance\.net\/[^\s"'<>]+\/projects?[^\s"'<>]*)/gi;
-  const found = [...new Set((html.match(pattern) || []).map((entry) => entry.replace(/\?.*$/, '')))].filter((url) => url.includes('/gallery/') || url.includes('/project/') || url.includes('/projects'));
-  return found;
+  const found = [...html.matchAll(/\bhref=["']([^"']+)["']/gi)].map(([, href]) => {
+    let url;
+    try {
+      url = new URL(href, 'https://www.behance.net');
+    } catch {
+      return '';
+    }
+
+    if (url.hostname !== 'www.behance.net' || !/^\/gallery\/\d+(?:\/|$)/i.test(url.pathname)) {
+      return '';
+    }
+
+    return `${url.origin}${url.pathname}`;
+  });
+
+  return [...new Set(found.filter(Boolean))];
 }
 
 function extractMeta(html, key) {
@@ -160,7 +173,7 @@ async function syncBehanceProjects() {
   const existingProjects = await readJsonFile(jsonPath);
   const safeExisting = Array.isArray(existingProjects) ? existingProjects : [];
 
-  const baseUrl = 'https://www.behance.net/baddinimotion';
+  const baseUrl = 'https://www.behance.net/brunobaddini';
   const profileHtml = await fetchText(baseUrl);
   const projectLinks = extractProjectLinks(profileHtml);
 
@@ -192,7 +205,7 @@ async function syncBehanceProjects() {
         continue;
       }
 
-      const coverUrl = extractCover(html, 'images/the-weirdo.svg');
+      const coverUrl = extractCover(html, 'images/brand/Baddini_Avatar_1080x1080.png');
       const safeCover = sanitizeUrl(coverUrl);
       const fileExtension = safeCover.includes('.png') ? '.png' : safeCover.includes('.webp') ? '.webp' : safeCover.includes('.gif') ? '.gif' : safeCover.includes('.jpeg') ? '.jpeg' : '.jpg';
       const localCoverName = `cover${fileExtension}`;
