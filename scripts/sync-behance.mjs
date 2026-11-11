@@ -243,7 +243,6 @@ async function syncBehanceProjects() {
       const existingProject = safeExisting.find((project) => project && project.behance === projectUrl);
       const existingManual = existingProject && existingProject.manual === true ? existingProject : null;
       if (existingManual) {
-        collected.push(existingManual);
         continue;
       }
 
@@ -298,7 +297,12 @@ async function syncBehanceProjects() {
     }
   }
 
-  const merged = [...safeExisting.filter((item) => item && item.manual === true), ...collected];
+  const manualProjects = [...new Map(
+    safeExisting
+      .filter((item) => item && item.manual === true)
+      .map((item) => [item.behance || item.id, item])
+  ).values()];
+  const merged = [...manualProjects, ...collected];
 
   if (!merged.length) {
     throw new Error('Nenhum projeto válido foi coletado. O arquivo atual foi preservado.');

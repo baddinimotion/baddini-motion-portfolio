@@ -39,15 +39,41 @@
     function renderModule(module) {
       if (!module || !module.type) return '';
 
+      if (module.type === 'text') {
+        return `
+          <section class="project-copy">
+            <h2 class="display">${module.heading || ''}</h2>
+            <p>${module.credit || ''}</p>
+          </section>
+        `;
+      }
+
+      if (module.type === 'gallery') {
+        const items = Array.isArray(module.items) ? module.items : [];
+        const content = items.map((item) => item.type === 'image'
+          ? `<img src="${item.src}" alt="${item.alt || ''}" loading="lazy">`
+          : `<video src="${item.src}" aria-label="${item.alt || 'Animação do projeto'}" autoplay muted loop playsinline preload="metadata"></video>`).join('');
+        return `<div class="project-gallery columns-${module.columns || 2}">${content}</div>`;
+      }
+
       if (module.type === 'video') {
-        return `<video src="${module.src}" controls playsinline preload="metadata"></video>`;
+        return `
+          <figure class="project-video">
+            <video src="${module.src}"${module.poster ? ` poster="${module.poster}"` : ''} controls playsinline preload="metadata"></video>
+            ${module.title ? `<figcaption>${module.title}</figcaption>` : ''}
+          </figure>
+        `;
       }
 
       if (module.type === 'embed') {
-        return `<iframe class="embed" src="${module.src}" title="Vídeo do projeto" allowfullscreen loading="lazy"></iframe>`;
+        return `<iframe class="embed" src="${module.src}" title="${module.title || 'Vídeo do projeto'}" allow="autoplay; fullscreen; picture-in-picture" loading="eager"></iframe>`;
       }
 
-      return `<img src="${module.src}" alt="" loading="lazy">`;
+      if (module.type === 'link') {
+        return `<p class="project-social-link"><a href="${module.src}" target="_blank" rel="noopener">${module.label || 'Abrir publicação'} ↗</a></p>`;
+      }
+
+      return `<img class="project-still" src="${module.src}" alt="${module.alt || ''}" loading="lazy">`;
     }
 
     fetch('projects.json')

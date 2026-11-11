@@ -3,17 +3,343 @@
     "id": "bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d",
     "title": "Bruno Baddini - Portfólio Motion Designer | Animator 2D",
     "category": "Motion Design",
-    "year": "",
+    "year": "2026",
     "client": "",
-    "tools": "",
-    "description": "",
+    "tools": "Photoshop, Illustrator, After Effects, Premiere Pro, Toon Boom Harmony, Toon Boom Storyboard Pro",
+    "description": "Portfólio dos meus trabalhos como Motion Designer | Animador 2D e 3D | Video Editor | Art Director. Workcase of my journey working as Motion Designer | 2D and 3D Animator | Video Editor | Art Director.",
     "cover": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/cover.gif",
     "behance": "https://www.behance.net/gallery/242334381/Bruno-Baddini-Portfolio-Motion-Designer-Animator-2D",
-    "external": true,
+    "external": false,
+    "manual": true,
     "modules": [
       {
-        "type": "image",
-        "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/cover.gif"
+        "type": "video",
+        "src": "videos/baddini-showreel-full.mp4",
+        "poster": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/showreel-poster.jpg",
+        "title": "Showreel completo 2026"
+      },
+      {
+        "type": "link",
+        "src": "https://www.linkedin.com/feed/update/urn:li:activity:7495173024632176640/",
+        "label": "Ver publicação original no LinkedIn"
+      },
+      {
+        "type": "text",
+        "heading": "Luccas Toon - Luccas Neto",
+        "credit": "MOTION DESIGNER - VFX ARTIST - VIDEO EDITOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/logo-podkisse-youtube.mp4",
+            "alt": "Animação de logo PodKisses"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/a-demogorgon-from-stranger-things-showed-up-at-home.mp4",
+            "alt": "Animação de Demogorgon"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/os-alunos-conhecem-a-biblioteca-magica-da-escola.mp4",
+            "alt": "Animação da biblioteca mágica da escola"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/os-alunos-conhecem-a-biblioteca-magica-da-escola-2.mp4",
+            "alt": "Animação da biblioteca mágica da escola"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Probiatop Manifesto - FQM",
+        "credit": "MOTION DESIGNER / VIDEO EDITOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 3,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/studio-muevo-1.mp4",
+            "alt": "Animação de identidade Studio Muevo"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/studio-muevo-2.mp4",
+            "alt": "Animação de identidade Studio Muevo"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/studio-muevo-3.mp4",
+            "alt": "Animação de identidade Studio Muevo"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Resenha - Volta ao Mundo Bambas",
+        "credit": "MOTION DESIGNER"
+      },
+      {
+        "type": "gallery",
+        "columns": 1,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/vinheta-de-abertura-vmb-1.mp4",
+            "alt": "Vinheta de abertura VMB"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Batuque das Montanhas - Prefeitura de Teresópolis",
+        "credit": "LEAD ANIMATOR - CHARACTER ANIMATOR - COMPOSITOR - RIGGER - STORYBOARD ARTIST"
+      },
+      {
+        "type": "gallery",
+        "columns": 3,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/gravacao-de-tela-2026-01-16-135119.mp4",
+            "alt": "Estudo de animação de personagens"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/gravacao-de-tela-2026-01-16-135206.mp4",
+            "alt": "Estudo de animação de personagens"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/gravacao-de-tela-2026-01-16-135251.mp4",
+            "alt": "Estudo de animação de personagem"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "AD Campaing - Tsuna Agency",
+        "credit": "ART DIRECTOR - LEAD ANIMATOR - CHARACTER ANIMATOR - COMPOSITOR - STORYBOARD ARTIST"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/logo.mp4",
+            "alt": "Animação de logo"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/loop-logo.mp4",
+            "alt": "Loop de animação de logo"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Motion ADs - DOT Energy",
+        "credit": "MOTION DESIGNER"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/dot-01.mp4",
+            "alt": "Motion ad DOT Energy"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/dot-02.mp4",
+            "alt": "Motion ad DOT Energy"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/dot-03.mp4",
+            "alt": "Motion ad DOT Energy"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/dot-energy-horizontal-1080x1920-youtube-16-v01.mp4",
+            "alt": "Vídeo DOT Energy"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Selvocracia Crew Visualizer - Atlântico",
+        "credit": "ART DIRECTOR - 2D ANIMATOR - COMPOSITOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/atlantico-01.mp4",
+            "alt": "Visualizer Atlântico"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/atlantico-02.mp4",
+            "alt": "Visualizer Atlântico"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Fetiches Visualizer - Lufeh",
+        "credit": "2D ANIMATOR - COMPOSITOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 1,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/lufehyoutube-1080x1920.mp4",
+            "alt": "Visualizer Fetiches de Lufeh"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "A Cifra das Ruas Visualizer - Kadã",
+        "credit": "ART DIRECTOR - 2D ANIMATOR - COMPOSITOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 3,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/kada-loop.mp4",
+            "alt": "Visualizer A Cifra das Ruas"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/kada-loop-2.mp4",
+            "alt": "Visualizer A Cifra das Ruas"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/kada-loop-3.mp4",
+            "alt": "Visualizer A Cifra das Ruas"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Chroma Key Ep - N1gor",
+        "credit": "ART DIRECTOR - 2D ANIMATOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/chroma-key-n1gor.mp4",
+            "alt": "Clipe Chroma Key de N1gor"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/eu-vim-de-la-n1gor.mp4",
+            "alt": "Clipe Eu Vim de Lá de N1gor"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/me-perdoa-mae-n1gor.mp4",
+            "alt": "Clipe Me Perdoa, Mãe de N1gor"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/o-que-ha-em-mim-n1gor.mp4",
+            "alt": "Clipe O Que Há em Mim de N1gor"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Bate Bate Visualizer - Gimicy",
+        "credit": "ART DIRECTOR - 2D ANIMATOR"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/bate-bate-gimicy-animation.mp4",
+            "alt": "Visualizer Bate Bate"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/bate-bate-gimicy-animation-2.mp4",
+            "alt": "Visualizer Bate Bate"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Medias OOH - Lojas Leader",
+        "credit": "MOTION DESIGNER"
+      },
+      {
+        "type": "gallery",
+        "columns": 3,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/leader-01.mp4",
+            "alt": "Mídia OOH Lojas Leader"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/leader-02.mp4",
+            "alt": "Mídia OOH Lojas Leader"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/leader-03.mp4",
+            "alt": "Mídia OOH Lojas Leader"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/28-12-reels-mas-1.mp4",
+            "alt": "Reel de motion design"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Website Home Video - Tsuna Agency",
+        "credit": "MOTION DESIGNER"
+      },
+      {
+        "type": "gallery",
+        "columns": 2,
+        "items": [
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/tsuna-home-video.mp4",
+            "alt": "Vídeo home Tsuna Agency"
+          },
+          {
+            "type": "video",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/tsuna-home-video-recuperado.mp4",
+            "alt": "Vídeo de identidade Tsuna"
+          }
+        ]
       }
     ]
   },
@@ -45,13 +371,13 @@
     "description": "",
     "cover": "images/projects/dot-energy-dot-energy/cover.png",
     "behance": "https://www.behance.net/gallery/218131759/DOT-ENERGY",
-    "external": true,
     "modules": [
       {
         "type": "image",
         "src": "images/projects/dot-energy-dot-energy/cover.png"
       }
-    ]
+    ],
+    "external": true
   },
   {
     "id": "monify-motion-video-monify-motion-video",
@@ -63,13 +389,13 @@
     "description": "",
     "cover": "images/projects/monify-motion-video-monify-motion-video/cover.png",
     "behance": "https://www.behance.net/gallery/210656229/Monify-Motion-Video",
-    "external": true,
     "modules": [
       {
         "type": "image",
         "src": "images/projects/monify-motion-video-monify-motion-video/cover.png"
       }
-    ]
+    ],
+    "external": true
   },
   {
     "id": "curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas",
@@ -81,12 +407,12 @@
     "description": "",
     "cover": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/cover.png",
     "behance": "https://www.behance.net/gallery/212500291/Curta-Metragem-Batuque-das-Montanhas",
-    "external": true,
     "modules": [
       {
         "type": "image",
         "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/cover.png"
       }
-    ]
+    ],
+    "external": true
   }
 ]

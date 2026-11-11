@@ -79,6 +79,8 @@ O site usa caminhos relativos e não depende de URLs absolutas em `/`. Isso perm
 - Os logos em `images/brand/` são PNGs originais do kit; o cabeçalho usa `logo-preto.png`.
 - O hero usa `baddini-weirdo-transparente.svg` sobre o vídeo, com `images/hero-poster.jpg` como poster/fallback visual.
 - A origem `videos/baddini-showreel-original.mp4` é ignorada pelo Git por exceder 100 MB.
+- A página do projeto principal usa o showreel completo em `videos/baddini-showreel-full.mp4` (65 s, H.264, 25,24 MiB) e mantém o link para a publicação original do LinkedIn.
+- As 35 animações fornecidas para esse projeto foram convertidas de GIF para MP4 H.264; os arquivos publicados ocupam cerca de 8,79 MiB no total.
 - Os vídeos publicados usam o trecho de 15 a 30 segundos da origem: H.264, 1920x1080 (7,97 MiB) e 1280x720 (2,68 MiB), ambos sem áudio.
 
 Para repetir o export:
