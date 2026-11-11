@@ -608,6 +608,23 @@ h2 span,
 .project-gallery.columns-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .project-gallery.columns-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
+.project-gallery.items-4 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-gallery.items-4 > * {
+  aspect-ratio: 1;
+  height: auto;
+  background: #111;
+  object-fit: cover;
+}
+
+.project-gallery.items-4 > :first-child {
+  grid-column: 1 / -1;
+  width: min(100%, 900px);
+  justify-self: center;
+}
+
 .project-gallery img,
 .project-gallery video {
   display: block;

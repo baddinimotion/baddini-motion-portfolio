@@ -50,10 +50,11 @@
 
       if (module.type === 'gallery') {
         const items = Array.isArray(module.items) ? module.items : [];
+        const fourItemLayout = items.length === 4 ? ' items-4' : '';
         const content = items.map((item) => item.type === 'image'
           ? `<img src="${item.src}" alt="${item.alt || ''}" loading="lazy">`
           : `<video src="${item.src}" aria-label="${item.alt || 'Animação do projeto'}" autoplay muted loop playsinline preload="metadata"></video>`).join('');
-        return `<div class="project-gallery columns-${module.columns || 2}">${content}</div>`;
+        return `<div class="project-gallery columns-${module.columns || 2}${fourItemLayout}">${content}</div>`;
       }
 
       if (module.type === 'video') {
