@@ -50,11 +50,14 @@
 
       if (module.type === 'gallery') {
         const items = Array.isArray(module.items) ? module.items : [];
-        const fourItemLayout = items.length === 4 ? ' items-4' : '';
         const content = items.map((item) => item.type === 'image'
-          ? `<img src="${item.src}" alt="${item.alt || ''}" loading="lazy">`
-          : `<video src="${item.src}" aria-label="${item.alt || 'Animação do projeto'}" autoplay muted loop playsinline preload="metadata"></video>`).join('');
-        return `<div class="project-gallery columns-${module.columns || 2}${fourItemLayout}">${content}</div>`;
+          ? `<img src="${item.src}" alt="${item.alt || ''}" data-orientation="${item.orientation || ''}">`
+          : `<video src="${item.src}" aria-label="${item.alt || 'Animação do projeto'}" data-orientation="${item.orientation || ''}" autoplay muted loop playsinline preload="metadata"></video>`).join('');
+        const columns = items.length === 4 ? 3 : items.length === 3 ? 2 : items.length || module.columns || 2;
+        const fallbackClass = items.length === 3 || items.length === 4
+          ? ' gallery--mixed'
+          : ` columns-${columns}`;
+        return `<div class="project-gallery${fallbackClass}" data-item-count="${items.length}" style="--gallery-columns:${columns}">${content}</div>`;
       }
 
       if (module.type === 'video') {
@@ -120,6 +123,49 @@
             ${nextProject ? `<a class="btn" href="project.html?id=${encodeURIComponent(nextProject.id)}">Próximo: ${nextProject.title || 'Projeto'}</a>` : ''}
           </div>
         `;
+
+        caseRoot.querySelectorAll('.project-gallery[data-item-count="3"], .project-gallery[data-item-count="4"]').forEach((gallery) => {
+          const classify = () => {
+            const orientations = [...gallery.children].map((media) => {
+              if (['landscape', 'portrait', 'square'].includes(media.dataset.orientation)) {
+                return media.dataset.orientation;
+              }
+
+              const width = media.tagName === 'IMG' ? media.naturalWidth : media.videoWidth;
+              const height = media.tagName === 'IMG' ? media.naturalHeight : media.videoHeight;
+              if (!width || !height) return '';
+
+              const ratio = width / height;
+              if (ratio > 1.05) return 'landscape';
+              if (ratio < 0.95) return 'portrait';
+              return 'square';
+            });
+
+            if (orientations.some((orientation) => !orientation)) return;
+
+            gallery.classList.remove('gallery--3-landscape', 'gallery--4-landscape', 'gallery--3-portrait', 'gallery--mixed');
+            const count = orientations.length;
+            const allLandscape = orientations.every((orientation) => orientation === 'landscape');
+            const allPortrait = orientations.every((orientation) => orientation === 'portrait');
+
+            if (count === 3 && allPortrait) {
+              gallery.classList.add('gallery--3-portrait');
+            } else if (count === 3 && allLandscape) {
+              gallery.classList.add('gallery--3-landscape');
+            } else if (count === 4 && allLandscape) {
+              gallery.classList.add('gallery--4-landscape');
+            } else {
+              gallery.classList.add('gallery--mixed');
+              gallery.style.setProperty('--gallery-columns', count === 4 ? '3' : '2');
+            }
+          };
+
+          gallery.querySelectorAll('img, video').forEach((media) => {
+            media.addEventListener(media.tagName === 'IMG' ? 'load' : 'loadedmetadata', classify);
+            media.addEventListener('error', classify);
+          });
+          classify();
+        });
       })
       .catch(() => {
         caseRoot.innerHTML = '<div class="case-head"><p>Erro ao carregar o projeto. Verifique o arquivo projects.json.</p></div>';
