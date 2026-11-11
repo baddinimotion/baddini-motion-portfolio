@@ -1,1 +1,87 @@
-[]
+[
+  {
+    "id": "bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d",
+    "title": "Bruno Baddini - Portfólio Motion Designer | Animator 2D",
+    "category": "Motion Design",
+    "year": "",
+    "client": "",
+    "tools": "",
+    "description": "",
+    "cover": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/cover.gif",
+    "behance": "https://www.behance.net/gallery/242334381/Bruno-Baddini-Portfolio-Motion-Designer-Animator-2D",
+    "modules": [
+      {
+        "type": "image",
+        "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/cover.gif"
+      }
+    ]
+  },
+  {
+    "id": "animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses",
+    "title": "Animação de Logo + Transição Luccas Toon + PodKisses",
+    "category": "Motion Design",
+    "year": "",
+    "client": "",
+    "tools": "",
+    "description": "",
+    "cover": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/cover.png",
+    "behance": "https://www.behance.net/gallery/227246239/Animacao-de-Logo-Transicao-Luccas-Toon-PodKisses",
+    "modules": [
+      {
+        "type": "image",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/cover.png"
+      }
+    ]
+  },
+  {
+    "id": "dot-energy-dot-energy",
+    "title": "DOT ENERGY",
+    "category": "Motion Design",
+    "year": "",
+    "client": "",
+    "tools": "",
+    "description": "",
+    "cover": "images/projects/dot-energy-dot-energy/cover.png",
+    "behance": "https://www.behance.net/gallery/218131759/DOT-ENERGY",
+    "modules": [
+      {
+        "type": "image",
+        "src": "images/projects/dot-energy-dot-energy/cover.png"
+      }
+    ]
+  },
+  {
+    "id": "monify-motion-video-monify-motion-video",
+    "title": "Monify Motion Video",
+    "category": "Motion Design",
+    "year": "",
+    "client": "",
+    "tools": "",
+    "description": "",
+    "cover": "images/projects/monify-motion-video-monify-motion-video/cover.png",
+    "behance": "https://www.behance.net/gallery/210656229/Monify-Motion-Video",
+    "modules": [
+      {
+        "type": "image",
+        "src": "images/projects/monify-motion-video-monify-motion-video/cover.png"
+      }
+    ]
+  },
+  {
+    "id": "curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas",
+    "title": "Curta-Metragem - Batuque das Montanhas",
+    "category": "Motion Design",
+    "year": "",
+    "client": "",
+    "tools": "",
+    "description": "",
+    "cover": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/cover.png",
+    "behance": "https://www.behance.net/gallery/212500291/Curta-Metragem-Batuque-das-Montanhas",
+    "modules": [
+      {
+        "type": "image",
+        "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/cover.png"
+      }
+    ]
+  }
+]

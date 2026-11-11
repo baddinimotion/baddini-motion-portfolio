@@ -81,6 +81,38 @@ function extractProjectLinks(html) {
   return [...new Set(found.filter(Boolean))];
 }
 
+function extractProfileProjects(html) {
+  const anchors = [...html.matchAll(/<a\b[^>]*href=["']([^"']*\/gallery\/\d+[^"']*)["'][^>]*>/gi)];
+  const projects = [];
+  const seen = new Set();
+
+  for (const match of anchors) {
+    const projectUrl = new URL(match[1], 'https://www.behance.net').href;
+    if (seen.has(projectUrl)) continue;
+    seen.add(projectUrl);
+
+    const titleMatch = match[0].match(/\btitle=["'](?:Link to project|Link para o projeto) - ([^"']+)/i);
+    const previousHtml = html.slice(Math.max(0, match.index - 12000), match.index);
+    const imageTags = [...previousHtml.matchAll(/<img\b[^>]*class=["'][^"']*ProjectCoverNeue-image[^"']*["'][^>]*>/gi)];
+    const imageTag = imageTags.at(-1)?.[0] || '';
+    const coverMatch = imageTag.match(/\bsrc=["']([^"']+)/i);
+
+    projects.push({
+      url: projectUrl,
+      title: titleMatch ? titleMatch[1].replace(/&amp;/g, '&').trim() : '',
+      cover: coverMatch ? coverMatch[1] : ''
+    });
+  }
+
+  return projects;
+}
+
+function repairMojibake(value) {
+  if (!/[ÃÂ]/.test(value)) return value;
+  const repaired = Buffer.from(value, 'latin1').toString('utf8');
+  return repaired.includes('\uFFFD') ? value : repaired;
+}
+
 function extractMeta(html, key) {
   const patterns = [
     new RegExp(`<meta[^>]+property=["']${key}["'][^>]+content=["']([^"']+)["'][^>]*>`, 'i'),
@@ -175,7 +207,8 @@ async function syncBehanceProjects() {
 
   const baseUrl = 'https://www.behance.net/brunobaddini';
   const profileHtml = await fetchText(baseUrl);
-  const projectLinks = extractProjectLinks(profileHtml);
+  const profileProjects = extractProfileProjects(profileHtml);
+  const projectLinks = profileProjects.length ? profileProjects.map((project) => project.url) : extractProjectLinks(profileHtml);
 
   if (!projectLinks.length) {
     throw new Error('Nenhum projeto público encontrado no perfil do Behance. O HTML do perfil não expôs links válidos.');
@@ -187,12 +220,20 @@ async function syncBehanceProjects() {
     await delay(RATE_LIMIT_MS);
 
     try {
-      const html = await fetchText(link);
+      const profileProject = profileProjects.find((project) => project.url === link);
+      let html = '';
+      try {
+        html = await fetchText(link);
+      } catch (error) {
+        console.warn(`[sync] Detalhes bloqueados para ${link}: ${error.message}. Usando os dados públicos do perfil.`);
+      }
+
       const projectUrl = sanitizeUrl(link);
-      const title = extractTitle(html, projectUrl);
-      const description = extractDescription(html);
-      const year = new Date().getFullYear().toString();
-      const category = extractCategory(html) || 'Motion Design';
+      const title = repairMojibake(html ? extractTitle(html, projectUrl) : profileProject?.title || '');
+      const description = html ? extractDescription(html) : '';
+      const publishedAt = html ? extractMeta(html, 'article:published_time') : '';
+      const year = publishedAt ? new Date(publishedAt).getFullYear().toString() : '';
+      const category = (html ? extractCategory(html) : '') || 'Motion Design';
       const slug = normalizeSlug(`${title}-${projectUrl.split('/').filter(Boolean).pop() || 'projeto'}`);
 
       if (!title || title.toLowerCase().includes('behance')) {
@@ -205,7 +246,7 @@ async function syncBehanceProjects() {
         continue;
       }
 
-      const coverUrl = extractCover(html, 'images/brand/Baddini_Avatar_1080x1080.png');
+      const coverUrl = extractCover(html, profileProject?.cover || 'images/brand/Baddini_Avatar_1080x1080.png');
       const safeCover = sanitizeUrl(coverUrl);
       const fileExtension = safeCover.includes('.png') ? '.png' : safeCover.includes('.webp') ? '.webp' : safeCover.includes('.gif') ? '.gif' : safeCover.includes('.jpeg') ? '.jpeg' : '.jpg';
       const localCoverName = `cover${fileExtension}`;
@@ -218,7 +259,7 @@ async function syncBehanceProjects() {
         console.warn(`[sync] Não foi possível baixar a capa de ${title}: ${assetError.message}`);
       }
 
-      const modules = buildModulesFromHtml(html);
+      const modules = html ? buildModulesFromHtml(html) : [];
       const normalizedModules = modules.map((module, index) => {
         const src = sanitizeUrl(module.src);
         if (!src) return null;

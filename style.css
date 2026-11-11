@@ -125,7 +125,10 @@ h1, h2, h3 {
 
 .work h2,
 .about h2,
-.contact h2 { font-family: var(--section-display); }
+.contact h2 {
+  font-family: var(--section-display);
+  line-height: calc(.86em + 5px);
+}
 
 h1 {
   font-size: clamp(4rem, 9.8vw, 10rem);
