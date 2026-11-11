@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BADDINI — Motion with Attitude</title>
+  <meta name="description" content="Portfólio de Motion Design, Animação 2D, VFX e Edição de Vídeo de BADDINI.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BADDINI — Motion with Attitude">
+  <meta property="og:description" content="Portfólio de Motion Design, Animação 2D, VFX e Edição de Vídeo.">
+  <meta property="og:image" content="images/the-weirdo.svg">
+  <meta property="og:image:alt" content="Baddini portfolio mascot">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BADDINI — Motion with Attitude">
+  <meta name="twitter:description" content="Portfólio de Motion Design, Animação 2D, VFX e Edição de Vídeo.">
+  <meta name="twitter:image" content="images/the-weirdo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a href="index.html" class="logo display" aria-label="Voltar para a página inicial">Baddini</a>
+    <nav aria-label="Navegação principal">
+      <a href="#work">Trabalhos</a>
+      <a href="#about">Sobre</a>
+      <a href="#contact">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="weirdo">
+        <img src="images/the-weirdo.svg" alt="The Weirdo, o macaco da BADDINI">
+      </div>
+      <div class="row">
+        <p>Motion design, animação 2D, VFX e edição de vídeo com atitude.</p>
+        <a class="btn" href="#work">Ver trabalhos</a>
+      </div>
+      <h1 class="display" aria-label="Baddini">
+        <span style="--i:0">B</span>
+        <span style="--i:1">A</span>
+        <span style="--i:2">D</span>
+        <span style="--i:3">D</span>
+        <span style="--i:4">I</span>
+        <span style="--i:5">N</span>
+        <span style="--i:6">I</span>
+      </h1>
+    </div>
+
+    <div class="marquee display" aria-hidden="true">
+      <div>Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp;</div>
+    </div>
+
+    <section id="work">
+      <div class="sec-head">
+        <h2 class="display">Trabalhos</h2>
+        <div class="filters" id="filters" role="group" aria-label="Filtrar por categoria"></div>
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="cols">
+        <h2 class="display">Quem é a Baddini?</h2>
+        <div>
+          <p>Escreva aqui 2 ou 3 frases sobre sua experiência, o tipo de projeto que você faz e para quem.</p>
+          <p>Mencione agências, produtoras ou marcas relevantes e seu idioma de trabalho.</p>
+          <ul>
+            <li>After Effects</li>
+            <li>Cinema 4D</li>
+            <li>Premiere Pro</li>
+            <li>Nuke</li>
+            <li>Houdini</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <a class="big display" href="mailto:contato@exemplo.com">Vamos fazer barulho?</a>
+      <div class="links">
+        <a href="mailto:contato@exemplo.com">E-mail</a>
+        <a href="https://www.behance.net/baddinimotion" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="y"></span> BADDINI</span>
+    <span>Rio de Janeiro, Brasil</span>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const grid = document.getElementById('grid');
+    const filters = document.getElementById('filters');
+
+    function renderEmptyState() {
+      grid.innerHTML = '<p class="empty-state">Nenhum projeto publicado ainda. Rode o script de sincronização do Behance para carregar o grid.</p>';
+    }
+
+    fetch('projects.json')
+      .then((response) => {
+        if (!response.ok) throw new Error('projects.json não encontrado');
+        return response.json();
+      })
+      .then((list) => {
+        if (!Array.isArray(list) || list.length === 0) {
+          renderEmptyState();
+          return;
+        }
+
+        const validProjects = list.filter((project) => project && project.id && project.title);
+        if (!validProjects.length) {
+          renderEmptyState();
+          return;
+        }
+
+        grid.innerHTML = validProjects.map((project) => {
+          const category = project.category || 'Geral';
+          const year = project.year || '';
+          const cover = project.cover || 'images/the-weirdo.svg';
+          const alt = project.title ? `Capa do projeto ${project.title}` : 'Capa do projeto';
+          return `
+            <a class="card" data-cat="${category}" href="project.html?id=${encodeURIComponent(project.id)}">
+              <div class="cover">
+                <img src="${cover}" alt="${alt}" loading="lazy">
+              </div>
+              <h3>${project.title}</h3>
+              <small>${category}${year ? ` · ${year}` : ''}</small>
+            </a>
+          `;
+        }).join('');
+
+        const categories = ['Todos', ...new Set(validProjects.map((project) => project.category || 'Geral'))];
+        filters.innerHTML = categories.map((category, index) => `
+          <button type="button" data-c="${category}" aria-pressed="${index === 0}">${category}</button>
+        `).join('');
+
+        filters.addEventListener('click', (event) => {
+          const button = event.target.closest('button');
+          if (!button) return;
+
+          const selected = button.dataset.c;
+          filters.querySelectorAll('button').forEach((item) => {
+            item.setAttribute('aria-pressed', String(item === button));
+          });
+
+          grid.querySelectorAll('.card').forEach((card) => {
+            const matches = selected === 'Todos' || card.dataset.cat === selected;
+            card.classList.toggle('hide', !matches);
+          });
+        });
+      })
+      .catch(() => {
+        renderEmptyState();
+      });
+  </script>
+</body>
+</html>

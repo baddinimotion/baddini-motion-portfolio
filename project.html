@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projeto — BADDINI</title>
+  <meta name="description" content="Detalhes do projeto de BADDINI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a href="index.html" class="logo display">Baddini</a>
+    <nav aria-label="Navegação do projeto">
+      <a href="index.html#work">← Todos os trabalhos</a>
+    </nav>
+  </header>
+
+  <main id="case"></main>
+
+  <footer>
+    <span>© <span id="y"></span> BADDINI</span>
+    <span>Rio de Janeiro, Brasil</span>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const caseRoot = document.getElementById('case');
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    function renderModule(module) {
+      if (!module || !module.type) return '';
+
+      if (module.type === 'video') {
+        return `<video src="${module.src}" controls playsinline preload="metadata"></video>`;
+      }
+
+      if (module.type === 'embed') {
+        return `<iframe class="embed" src="${module.src}" title="Vídeo do projeto" allowfullscreen loading="lazy"></iframe>`;
+      }
+
+      return `<img src="${module.src}" alt="" loading="lazy">`;
+    }
+
+    fetch('projects.json')
+      .then((response) => response.json())
+      .then((list) => {
+        const project = Array.isArray(list) ? list.find((item) => item && item.id === id) : null;
+
+        if (!project) {
+          caseRoot.innerHTML = `
+            <div class="case-head">
+              <h1 class="display">Projeto não encontrado</h1>
+              <p><a class="btn" href="index.html#work">Voltar para o portfólio</a></p>
+            </div>
+          `;
+          return;
+        }
+
+        const nextProject = list[(list.findIndex((item) => item && item.id === id) + 1) % list.length] || null;
+        const title = project.title || 'Projeto sem título';
+        document.title = `${title} — BADDINI`;
+
+        const modules = Array.isArray(project.modules) ? project.modules : [];
+        const behanceLink = project.behance || '#';
+
+        caseRoot.innerHTML = `
+          <div class="case-head">
+            <h1 class="display">${title}</h1>
+            <div class="meta">
+              <span><b>Categoria</b> ${project.category || ''}</span>
+              <span><b>Ano</b> ${project.year || ''}</span>
+              <span><b>Cliente</b> ${project.client || ''}</span>
+              <span><b>Ferramentas</b> ${project.tools || ''}</span>
+            </div>
+            <p>${project.description || ''}</p>
+          </div>
+
+          <div class="modules">
+            ${modules.map(renderModule).join('') || '<p class="empty-state">Este projeto ainda não tem módulos publicados.</p>'}
+          </div>
+
+          <div class="case-foot">
+            <a class="btn ghost" href="${behanceLink}" target="_blank" rel="noopener">Ver no Behance</a>
+            ${nextProject ? `<a class="btn" href="project.html?id=${encodeURIComponent(nextProject.id)}">Próximo: ${nextProject.title || 'Projeto'}</a>` : ''}
+          </div>
+        `;
+      })
+      .catch(() => {
+        caseRoot.innerHTML = '<div class="case-head"><p>Erro ao carregar o projeto. Verifique o arquivo projects.json.</p></div>';
+      });
+  </script>
+</body>
+</html>

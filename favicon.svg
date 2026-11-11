@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Baddini</title>
+  <desc id="desc">Ícone do portfólio Baddini</desc>
+  <rect width="64" height="64" rx="14" fill="#111111"/>
+  <path d="M10 48L24 16h16l14 32H41L32 31 23 48H10Z" fill="#F2F0E9"/>
+  <path d="M27 49c0-5 4-9 9-9s9 4 9 9v5H27v-5Z" fill="#D71920"/>
+</svg>

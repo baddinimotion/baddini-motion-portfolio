@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">The Weirdo</title>
+  <desc id="desc">Mascote do portfólio Baddini</desc>
+  <rect width="420" height="420" fill="#111111"/>
+  <g fill="#F2F0E9">
+    <path d="M110 285L210 90l100 195H110Z"/>
+    <circle cx="210" cy="142" r="18" fill="#D71920"/>
+  </g>
+  <path d="M170 262c18 26 44 39 70 39s52-13 70-39L296 330c-24 17-50 25-86 25s-62-8-86-25l46-68Z" fill="#D71920"/>
+</svg>
