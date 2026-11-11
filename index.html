@@ -8,95 +8,106 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="BADDINI — Motion with Attitude">
   <meta property="og:description" content="Portfólio de Motion Design, Animação 2D, VFX e Edição de Vídeo.">
-  <meta property="og:image" content="images/the-weirdo.svg">
+  <meta property="og:image" content="images/brand/Baddini_Avatar_1080x1080.png">
   <meta property="og:image:alt" content="Baddini portfolio mascot">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BADDINI — Motion with Attitude">
   <meta name="twitter:description" content="Portfólio de Motion Design, Animação 2D, VFX e Edição de Vídeo.">
-  <meta name="twitter:image" content="images/the-weirdo.svg">
+  <meta name="twitter:image" content="images/brand/Baddini_Avatar_1080x1080.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,800;0,900;1,900&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/brand/Baddini_Avatar_1080x1080.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="top">
-    <a href="index.html" class="logo display" aria-label="Voltar para a página inicial">Baddini</a>
+    <a class="brand" href="index.html" aria-label="Voltar para a página inicial">
+      <img src="images/brand/logo-preto.png" alt="BADDINI" height="40">
+    </a>
     <nav aria-label="Navegação principal">
       <a href="#work">Trabalhos</a>
       <a href="#about">Sobre</a>
-      <a href="#contact">Contato</a>
+      <a href="#contact">Contato ↗</a>
     </nav>
   </header>
 
-  <main>
-    <div class="hero">
-      <div class="weirdo">
-        <img src="images/the-weirdo.svg" alt="The Weirdo, o macaco da BADDINI">
+  <main id="main">
+    <section class="hero-movie" aria-label="Showreel BADDINI">
+      <h1 class="sr-only">BADDINI</h1>
+      <video class="hero-video" id="hero-video" muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
+        <source media="(max-width: 800px)" src="videos/hero-mobile.mp4" type="video/mp4">
+        <source src="videos/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-wash" aria-hidden="true"></div>
+      <img class="hero-mascot" src="images/brand/baddini-weirdo-transparente.svg" alt="BADDINI, o macaco The Weirdo">
+      <p class="hero-hint" aria-hidden="true">Passe o mouse para assistir</p>
+      <div class="hero-controls" aria-label="Controles do showreel">
+        <button class="video-control" id="video-toggle" type="button" aria-label="Pausar vídeo">Pausar</button>
+        <button class="video-control watch-control" id="mascot-toggle" type="button" aria-label="Assistir sem o mascote">Assistir</button>
       </div>
-      <div class="row">
-        <p>Motion design, animação 2D, VFX e edição de vídeo com atitude.</p>
-        <a class="btn" href="#work">Ver trabalhos</a>
-      </div>
-      <h1 class="display" aria-label="Baddini">
-        <span style="--i:0">B</span>
-        <span style="--i:1">A</span>
-        <span style="--i:2">D</span>
-        <span style="--i:3">D</span>
-        <span style="--i:4">I</span>
-        <span style="--i:5">N</span>
-        <span style="--i:6">I</span>
-      </h1>
-    </div>
+    </section>
 
     <div class="marquee display" aria-hidden="true">
-      <div>Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp;</div>
+      <div>Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp; Motion with attitude &nbsp;✱&nbsp;</div>
     </div>
 
-    <section id="work">
-      <div class="sec-head">
-        <h2 class="display">Trabalhos</h2>
+    <section id="work" class="work">
+      <div class="wrap">
+        <h2>Trabalhos<span>.</span></h2>
         <div class="filters" id="filters" role="group" aria-label="Filtrar por categoria"></div>
+        <div class="grid" id="grid" aria-live="polite"></div>
       </div>
-      <div class="grid" id="grid" aria-live="polite"></div>
     </section>
 
-    <section id="about" class="about">
-      <div class="cols">
-        <h2 class="display">Quem é a Baddini?</h2>
-        <div>
-          <p>Escreva aqui 2 ou 3 frases sobre sua experiência, o tipo de projeto que você faz e para quem.</p>
-          <p>Mencione agências, produtoras ou marcas relevantes e seu idioma de trabalho.</p>
-          <ul>
-            <li>After Effects</li>
-            <li>Cinema 4D</li>
-            <li>Premiere Pro</li>
-            <li>Nuke</li>
-            <li>Houdini</li>
-          </ul>
+    <section id="about" class="about wrap">
+      <div class="about-heading">
+        <h2>Quem é<br>a Baddini?</h2>
+        <img class="about-mascot" src="images/brand/baddini-weirdo-transparente.svg" alt="BADDINI, o macaco The Weirdo" loading="lazy">
+      </div>
+      <div>
+        <p>Sou Bruno Baddini, motion designer e video editor com base no Rio de Janeiro, Brasil. Formado em Desenvolvimento de Jogos Digitais pela Estácio de Sá em 2019, atuo há mais de 4 anos como motion designer e animador freelancer.</p>
+        <p>Ao longo da carreira, colaborei com empresas e artistas produzindo ilustrações e animações focadas em publicidade, criando peças para diferentes áreas de atuação. Também trabalhei ao lado de agências de marketing digital e artistas do rap e do hip hop, desenvolvendo e dirigindo vídeos animados com identidade visual forte e linguagem direta.</p>
+        <div class="experience-list" aria-label="Experiências anteriores">
+          <div class="experience-item">
+            <span class="experience-label">Motion Designer</span>
+            <strong>+4 anos</strong>
+          </div>
+          <div class="experience-item">
+            <span class="experience-label">Animador freelancer</span>
+            <strong>+4 anos</strong>
+          </div>
+          <div class="experience-item">
+            <span class="experience-label">Atuação</span>
+            <strong>Agências, artistas, marcas e criadores</strong>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <a class="big display" href="mailto:contato@exemplo.com">Vamos fazer barulho?</a>
-      <div class="links">
-        <a href="mailto:contato@exemplo.com">E-mail</a>
-        <a href="https://www.behance.net/baddinimotion" target="_blank" rel="noopener">Behance</a>
-        <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener">LinkedIn</a>
+        <ul class="tool-list">
+          <li>After Effects</li>
+          <li>Toon Boom Harmony</li>
+          <li>Premiere Pro</li>
+          <li>Cap Cut</li>
+          <li>Blender</li>
+          <li>Adobe Suite CC</li>
+          <li>Vibecoding</li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer>
-    <span>© <span id="y"></span> BADDINI</span>
-    <span>Rio de Janeiro, Brasil</span>
+  <footer id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let’s make<br>some noise.</h2>
+      <img class="footer-mascot" src="images/brand/Baddini_Avatar_1080x1080.png" alt="" loading="lazy">
+      <div class="links">
+        <a href="mailto:baddinimotion@outlook.com">baddinimotion@outlook.com ↗</a>
+        <a href="https://www.behance.net/baddinimotion" target="_blank" rel="noopener">Behance ↗</a>
+        <a href="https://www.linkedin.com/in/bruno-baddini-344754152/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
     const grid = document.getElementById('grid');
     const filters = document.getElementById('filters');
 
@@ -124,15 +135,20 @@
         grid.innerHTML = validProjects.map((project) => {
           const category = project.category || 'Geral';
           const year = project.year || '';
-          const cover = project.cover || 'images/the-weirdo.svg';
+          const cover = project.cover || 'images/brand/Baddini_Avatar_1080x1080.png';
           const alt = project.title ? `Capa do projeto ${project.title}` : 'Capa do projeto';
           return `
             <a class="card" data-cat="${category}" href="project.html?id=${encodeURIComponent(project.id)}">
               <div class="cover">
                 <img src="${cover}" alt="${alt}" loading="lazy">
               </div>
-              <h3>${project.title}</h3>
-              <small>${category}${year ? ` · ${year}` : ''}</small>
+              <div class="caption">
+                <div>
+                  <h3>${project.title}</h3>
+                  <p class="mono">${category}${year ? ` · ${year}` : ''}</p>
+                </div>
+                <span aria-hidden="true">↗</span>
+              </div>
             </a>
           `;
         }).join('');
@@ -160,6 +176,37 @@
       .catch(() => {
         renderEmptyState();
       });
+
+    const hero = document.querySelector('.hero-movie');
+    const video = document.getElementById('hero-video');
+    const videoToggle = document.getElementById('video-toggle');
+    const mascotToggle = document.getElementById('mascot-toggle');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion) {
+      video.pause();
+      video.removeAttribute('autoplay');
+    } else {
+      video.play().catch(() => hero.classList.add('video-blocked'));
+    }
+
+    videoToggle.addEventListener('click', () => {
+      if (video.paused) {
+        video.play().catch(() => hero.classList.add('video-blocked'));
+        videoToggle.textContent = 'Pausar';
+        videoToggle.setAttribute('aria-label', 'Pausar vídeo');
+      } else {
+        video.pause();
+        videoToggle.textContent = 'Reproduzir';
+        videoToggle.setAttribute('aria-label', 'Reproduzir vídeo');
+      }
+    });
+
+    mascotToggle.addEventListener('click', () => {
+      const watching = hero.classList.toggle('is-watching');
+      mascotToggle.textContent = watching ? 'Ver mascote' : 'Assistir';
+      mascotToggle.setAttribute('aria-label', watching ? 'Mostrar mascote' : 'Assistir sem o mascote');
+    });
   </script>
 </body>
 </html>

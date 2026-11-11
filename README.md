@@ -72,10 +72,22 @@ O site usa caminhos relativos e não depende de URLs absolutas em `/`. Isso perm
 
 ## O que precisa ser ajustado manualmente
 
-- E-mail de contato
-- LinkedIn
-- Seção “Sobre”
-- Arquivo `images/the-weirdo.svg`
+- Conferir os dados de contato e a biografia antes da publicação
+
+## Brand assets e hero video
+
+- Os logos em `images/brand/` são PNGs originais do kit; o cabeçalho usa `logo-preto.png`.
+- O hero usa `baddini-weirdo-transparente.svg` sobre o vídeo, com `images/hero-poster.jpg` como poster/fallback visual.
+- A origem `videos/baddini-showreel-original.mp4` é ignorada pelo Git por exceder 100 MB.
+- Os vídeos publicados usam o trecho de 15 a 30 segundos da origem: H.264, 1920x1080 (7,97 MiB) e 1280x720 (2,68 MiB), ambos sem áudio.
+
+Para repetir o export:
+
+```bash
+ffmpeg -ss 15 -i videos/baddini-showreel-original.mp4 -t 15 -an -vf "scale=-2:1080,fps=30" -c:v libx264 -crf 27 -preset slow -pix_fmt yuv420p -movflags +faststart videos/hero.mp4
+ffmpeg -ss 15 -i videos/baddini-showreel-original.mp4 -t 15 -an -vf "scale=-2:720,fps=30" -c:v libx264 -crf 29 -preset slow -pix_fmt yuv420p -movflags +faststart videos/hero-mobile.mp4
+ffmpeg -i videos/hero.mp4 -frames:v 1 -q:v 3 images/hero-poster.jpg
+```
 
 ## Observação sobre o Behance
 
