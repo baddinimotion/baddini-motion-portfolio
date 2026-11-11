@@ -9,6 +9,7 @@
     "description": "",
     "cover": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/cover.gif",
     "behance": "https://www.behance.net/gallery/242334381/Bruno-Baddini-Portfolio-Motion-Designer-Animator-2D",
+    "external": true,
     "modules": [
       {
         "type": "image",
@@ -44,6 +45,7 @@
     "description": "",
     "cover": "images/projects/dot-energy-dot-energy/cover.png",
     "behance": "https://www.behance.net/gallery/218131759/DOT-ENERGY",
+    "external": true,
     "modules": [
       {
         "type": "image",
@@ -61,6 +63,7 @@
     "description": "",
     "cover": "images/projects/monify-motion-video-monify-motion-video/cover.png",
     "behance": "https://www.behance.net/gallery/210656229/Monify-Motion-Video",
+    "external": true,
     "modules": [
       {
         "type": "image",
@@ -78,6 +81,7 @@
     "description": "",
     "cover": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/cover.png",
     "behance": "https://www.behance.net/gallery/212500291/Curta-Metragem-Batuque-das-Montanhas",
+    "external": true,
     "modules": [
       {
         "type": "image",

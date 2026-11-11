@@ -480,7 +480,7 @@ h2 span,
 
 .contact h2 {
   font-size: clamp(3.2rem, 8vw, 7rem);
-  line-height: .86;
+  line-height: calc(1em + 5px);
 }
 
 .links {
