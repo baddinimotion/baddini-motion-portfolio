@@ -30,7 +30,7 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
             "type": "video",
@@ -87,12 +87,22 @@
       },
       {
         "type": "gallery",
-        "columns": 1,
+        "columns": 3,
         "items": [
           {
             "type": "video",
             "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/vinheta-de-abertura-vmb-1.mp4",
             "alt": "Vinheta de abertura VMB"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/resenha-02.gif",
+            "alt": "Resenha - Volta ao Mundo Bambas 02"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/resenha-03.gif",
+            "alt": "Resenha - Volta ao Mundo Bambas 03"
           }
         ]
       },
@@ -129,17 +139,22 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
-            "type": "video",
-            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/logo.mp4",
-            "alt": "Animação de logo"
+            "type": "image",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/agencia-tsuna-01.gif",
+            "alt": "Agência Tsuna 01"
           },
           {
-            "type": "video",
-            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/loop-logo.mp4",
-            "alt": "Loop de animação de logo"
+            "type": "image",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/agencia-tsuna-02.gif",
+            "alt": "Agência Tsuna 02"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/agencia-tsuna-03.gif",
+            "alt": "Agência Tsuna 03"
           }
         ]
       },
@@ -150,7 +165,7 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
             "type": "video",
@@ -181,7 +196,7 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
             "type": "video",
@@ -202,7 +217,7 @@
       },
       {
         "type": "gallery",
-        "columns": 1,
+        "columns": 3,
         "items": [
           {
             "type": "video",
@@ -244,7 +259,7 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
             "type": "video",
@@ -275,7 +290,7 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
             "type": "video",
@@ -327,7 +342,7 @@
       },
       {
         "type": "gallery",
-        "columns": 2,
+        "columns": 3,
         "items": [
           {
             "type": "video",
