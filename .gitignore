@@ -1,0 +1,7 @@
+videos/*.mp4
+!videos/hero.mp4
+!videos/hero-mobile.mp4
+videos/*original*
+videos/*.mov
+videos/*.webm
+**/*.DS_Store
