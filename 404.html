@@ -2,57 +2,32 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
   <title>404 — BADDINI</title>
-  <meta name="description" content="Página não encontrada.">
-  <meta property="og:image" content="images/brand/Baddini_Avatar_1080x1080.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@800;900&family=IBM+Plex+Mono:wght@500;600&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/brand/Baddini_Avatar_1080x1080.png">
-  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: var(--paper);
-      color: var(--ink);
-      text-align: center;
-    }
-    .not-found {
-      max-width: 960px;
-      padding: 3rem 1.5rem;
-      margin: auto;
-    }
-    .not-found .mast {
-      width: min(260px, 42vw);
-      margin: 0 auto 2rem;
-    }
-    .not-found h1 {
-      font-size: clamp(3rem, 10vw, 7rem);
-      margin-bottom: 1rem;
-    }
-    .not-found p {
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      margin-bottom: 1.5rem;
-    }
-    .not-found .button {
-      margin-top: 0;
-    }
+    * { box-sizing: border-box; }
+    body { min-height: 100svh; margin: 0; padding: clamp(1rem, 5vw, 6rem); display: grid; align-items: center; background: #f4f0e8; color: #0d0d0d; font: 1rem/1.5 system-ui, sans-serif; }
+    main { border: 2px solid; box-shadow: .45rem .45rem 0; padding: clamp(1rem, 5vw, 5rem); }
+    .label { font: bold .85rem monospace; }
+    h1 { margin: .16em 0; font: 900 clamp(3.3rem, 10vw, 10rem)/.91 Impact, sans-serif; text-transform: uppercase; }
+    span { color: #e52e2e; }
+    a { color: inherit; text-underline-offset: .2em; font-weight: 700; }
   </style>
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="index.html" aria-label="Voltar para a página inicial">
-      <img src="images/brand/logo-preto.png" alt="BADDINI" height="40">
-    </a>
-  </header>
-  <main class="not-found">
-    <img class="mast" src="images/brand/Baddini_Avatar_1080x1080.png" alt="BADDINI, o macaco The Weirdo">
-    <h1 class="display">404 — Not found</h1>
-    <p>A página que você procura não existe ou foi movida.</p>
-    <a class="button" href="index.html">Voltar ao portfólio</a>
+  <main>
+    <p class="label">BADDINI MOTION / ERRO 404</p>
+    <h1>Página não<br>encontrada<span>.</span></h1>
+    <a id="back-home" href="./index.html">← Voltar para a home</a>
   </main>
+  <script>
+    const parts = location.pathname.split('/').filter(Boolean);
+    const projectIndex = parts.indexOf('baddini-motion-portfolio');
+    if (projectIndex >= 0) {
+      const nestedLevels = parts.length - projectIndex - (location.pathname.endsWith('/') ? 1 : 2);
+      document.getElementById('back-home').href = '../'.repeat(Math.max(0, nestedLevels)) + './index.html';
+    }
+  </script>
 </body>
 </html>

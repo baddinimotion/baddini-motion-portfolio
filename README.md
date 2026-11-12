@@ -1,26 +1,17 @@
 # Baddini Portfolio
 
-Site estático do portfólio de BADDINI, com grid de projetos e página interna por projeto.
+Site estático do portfólio de BADDINI, com lista editorial de projetos e estudos de caso gerados a partir de `projects.json`.
 
 ## Como rodar localmente
 
-1. Abra o terminal na pasta do projeto.
-2. Instale o Node 20+.
-3. Execute:
-
-```bash
-npm install
-npm run dev
-```
-
-Acesse http://localhost:8000.
+Abra a pasta do projeto no VS Code e use **Open with Live Server** em `index.html`. Outra opção é executar `npm run dev` e acessar http://localhost:8000. O site não exige instalação de dependências para rodar.
 
 ## GitHub Pages
 
 1. Vá em Settings → Pages.
 2. Em Source, escolha GitHub Actions.
 3. Faça push na branch `main`.
-4. O workflow do GitHub Pages publicará a pasta estática automaticamente.
+4. O workflow `.github/workflows/deploy.yml` publica a pasta estática automaticamente. Se a fonte acabou de ser ativada, o workflow também pode ser iniciado manualmente pela aba Actions.
 
 ## Editar o projects.json à mão
 
@@ -74,22 +65,21 @@ O site usa caminhos relativos e não depende de URLs absolutas em `/`. Isso perm
 
 - Conferir os dados de contato e a biografia antes da publicação
 
-## Brand assets e hero video
+## Mapa de assets
 
-- Os logos em `images/brand/` são PNGs originais do kit; o cabeçalho usa `logo-preto.png`.
-- O hero usa `baddini-weirdo-transparente.svg` sobre o vídeo, com `images/hero-poster.jpg` como poster/fallback visual.
-- A origem `videos/baddini-showreel-original.mp4` é ignorada pelo Git por exceder 100 MB.
-- A página do projeto principal usa o showreel completo em `videos/baddini-showreel-full.mp4` (65 s, H.264, 25,24 MiB) e mantém o link para a publicação original do LinkedIn.
-- As 35 animações fornecidas para esse projeto foram convertidas de GIF para MP4 H.264; os arquivos publicados ocupam cerca de 8,79 MiB no total.
-- Os vídeos publicados usam o trecho de 15 a 30 segundos da origem: H.264, 1920x1080 (7,97 MiB) e 1280x720 (2,68 MiB), ambos sem áudio.
+| Origem | Uso |
+| --- | --- |
+| `images/brand/logo-preto.png` e `logo-offwhite.png` | Cabeçalho claro e menu escuro |
+| `images/brand/baddini-weirdo-transparente.svg` | Hero e variação de assinatura no estudo de caso The Weirdo |
+| `images/brand/baddini_the_weirdo_1920x1080.svg` | Banner de The Weirdo |
+| `images/brand/Baddini_Cabeca_Transparente.png` | Banner de contato e variação de cabeça |
+| `images/brand/Baddini_Avatar_1080x1080.png` | Favicon, capa de reserva e variação de avatar |
+| `videos/baddini-showreel-full.mp4` e `images/hero-poster.jpg` | Player do showreel completo (65 s) e imagem de abertura |
+| `projects.json` · `cover`, `description`, metadados e `modules` | Capas na lista, descrições, créditos, GIFs, MP4, galerias e links nas páginas de projeto |
+| `videos/hero.mp4` e `videos/hero-mobile.mp4` | Trechos do showreel preservados na pasta de mídia |
+| `videos/baddini-showreel-original.mp4` | Fonte local de exportação, ignorada pelo Git por exceder 100 MB |
 
-Para repetir o export:
-
-```bash
-ffmpeg -ss 15 -i videos/baddini-showreel-original.mp4 -t 15 -an -vf "scale=-2:1080,fps=30" -c:v libx264 -crf 27 -preset slow -pix_fmt yuv420p -movflags +faststart videos/hero.mp4
-ffmpeg -ss 15 -i videos/baddini-showreel-original.mp4 -t 15 -an -vf "scale=-2:720,fps=30" -c:v libx264 -crf 29 -preset slow -pix_fmt yuv420p -movflags +faststart videos/hero-mobile.mp4
-ffmpeg -i videos/hero.mp4 -frames:v 1 -q:v 3 images/hero-poster.jpg
-```
+Os links antigos em `project.html?id=…` continuam a abrir o estudo de caso correspondente.
 
 ## Observação sobre o Behance
 

@@ -315,11 +315,6 @@
         "items": [
           {
             "type": "video",
-            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/leader-01.mp4",
-            "alt": "Mídia OOH Lojas Leader"
-          },
-          {
-            "type": "video",
             "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/leader-02.mp4",
             "alt": "Mídia OOH Lojas Leader"
           },
@@ -348,11 +343,6 @@
             "type": "video",
             "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/tsuna-home-video.mp4",
             "alt": "Vídeo home Tsuna Agency"
-          },
-          {
-            "type": "video",
-            "src": "images/projects/bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d/media/tsuna-home-video-recuperado.mp4",
-            "alt": "Vídeo de identidade Tsuna"
           }
         ]
       }
@@ -362,19 +352,92 @@
     "id": "animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses",
     "title": "Animação de Logo + Transição Luccas Toon + PodKisses",
     "category": "Motion Design",
-    "year": "",
-    "client": "",
-    "tools": "",
+    "year": "2025",
+    "client": "Luccas Toon",
+    "tools": "Adobe After Effects",
     "description": "",
     "cover": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/cover.png",
     "behance": "https://www.behance.net/gallery/227246239/Animacao-de-Logo-Transicao-Luccas-Toon-PodKisses",
     "modules": [
       {
         "type": "image",
-        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/cover.png"
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/luccas-toon-podkisses.png",
+        "alt": "Luccas Neto e PodKisses"
+      },
+      {
+        "type": "prose",
+        "text": "Animações de logo e transições feitas com a equipe da Luccas Toon para o PodKisses, da Gi Alparone, e a Escola Fantástica."
+      },
+      {
+        "type": "image",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/podkisses.png",
+        "alt": "PodKisses"
+      },
+      {
+        "type": "video",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/podkisses-youtube.mp4",
+        "title": "PodKisses — Logo e transição para YouTube"
+      },
+      {
+        "type": "video",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/podkisses-transparente.webm",
+        "title": "PodKisses — Logo e transição com fundo transparente"
+      },
+      {
+        "type": "image",
+        "src": "https://mir-s3-cdn-cf.behance.net/project_modules/source/ff9f0a227246239.683cfb9c7de96.gif",
+        "title": "PodKisses — Animação de logo no Adobe After Effects",
+        "alt": "Processo da animação de logo do PodKisses"
+      },
+      {
+        "type": "prose",
+        "text": "Animações de chamada para os quadros do PodKisses."
+      },
+      {
+        "type": "video",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/podkisses-bate-bola.mp4",
+        "title": "Bate Bola Jogo Rápido"
+      },
+      {
+        "type": "video",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/podkisses-plaquinha.webm",
+        "title": "Plaquinha Espelho — Título do quadro com fundo transparente"
+      },
+      {
+        "type": "image",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/escola-fantastica.png",
+        "alt": "Escola Fantástica"
+      },
+      {
+        "type": "video",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/escola-fantastica-youtube.mp4",
+        "title": "Escola Fantástica — Versão final para YouTube"
+      },
+      {
+        "type": "video",
+        "src": "images/projects/animacao-de-logo-transicao-luccas-toon-podkisses-animacao-de-logo-transicao-luccas-toon-podkisses/media/escola-fantastica-transicao.mp4",
+        "title": "Escola Fantástica — Transição de logo com fundo verde"
+      },
+      {
+        "type": "image",
+        "src": "https://mir-s3-cdn-cf.behance.net/project_modules/source/d195c6227246239.683cfb9c7da41.gif",
+        "title": "Escola Fantástica — Animação de logo e transição no Adobe After Effects",
+        "alt": "Processo da transição da Escola Fantástica"
+      },
+      {
+        "type": "image",
+        "src": "https://mir-s3-cdn-cf.behance.net/project_modules/source/ba0aaa227246239.683cfb9c7d5a9.gif",
+        "title": "Escola Fantástica — Animação de logo no Adobe After Effects",
+        "alt": "Processo da animação de logo da Escola Fantástica"
+      },
+      {
+        "type": "prose",
+        "text": "© Luccas Toon. Todos os direitos das obras pertencem à Luccas Toon."
       }
     ],
-    "external": true
+    "external": true,
+    "layout": "podkisses",
+    "manual": true
   },
   {
     "id": "dot-energy-dot-energy",
