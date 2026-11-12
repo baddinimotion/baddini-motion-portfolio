@@ -5,11 +5,7 @@ const offLabel = document.getElementById('music-off-label');
 const showreel = document.getElementById('showreel');
 
 if (music && toggle && onLabel && offLabel && showreel) {
-  const storageKey = 'baddini-music-off';
   let muted = false;
-  try {
-    muted = sessionStorage.getItem(storageKey) === 'true';
-  } catch {}
 
   function updateControl() {
     toggle.hidden = false;
@@ -29,9 +25,6 @@ if (music && toggle && onLabel && offLabel && showreel) {
     muted = !muted;
     if (muted) music.pause();
     else playMusic();
-    try {
-      sessionStorage.setItem(storageKey, String(muted));
-    } catch {}
     updateControl();
   });
 

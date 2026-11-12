@@ -1,6 +1,6 @@
 import { localize, translate } from './language.js?v=music-toggle';
 import './hero.js?v=music-toggle';
-import './music.js?v=toggle';
+import './music.js?v=default-on';
 import { loadProjects, assetPath } from './projects.js';
 
 const menu = document.getElementById('site-menu');
