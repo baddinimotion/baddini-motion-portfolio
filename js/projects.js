@@ -1,5 +1,5 @@
 export async function loadProjects() {
-  const response = await fetch(new URL('../projects.json?v=gif-covers', import.meta.url));
+  const response = await fetch(new URL('../projects.json?v=batuque', import.meta.url));
   if (!response.ok) throw new Error('Não foi possível carregar projects.json');
   const projects = await response.json();
   return Array.isArray(projects) ? projects.filter((project) => project?.id && project.title) : [];

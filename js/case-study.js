@@ -1,5 +1,5 @@
-import { localize, translate } from './language.js';
-import { loadProjects, assetPath, escapeHtml as html } from './projects.js';
+import { localize, translate } from './language.js?v=batuque';
+import { loadProjects, assetPath, escapeHtml as html } from './projects.js?v=batuque';
 
 const root = document.getElementById('case');
 const projectId = new URLSearchParams(location.search).get('id') || 'weirdo';
@@ -120,7 +120,9 @@ function renderProject(project, next) {
   root.classList.toggle('is-dot-energy', isDotEnergy);
   const isMonify = project.layout === 'monify';
   root.classList.toggle('is-monify', isMonify);
-  const showBanner = !isPodkisses && !isDotEnergy && !isMonify && project.id !== 'bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d';
+  const isBatuque = project.layout === 'batuque';
+  root.classList.toggle('is-batuque', isBatuque);
+  const showBanner = !isPodkisses && !isDotEnergy && !isMonify && !isBatuque && project.id !== 'bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d';
   root.classList.toggle('is-weirdo', project === mascot);
   const specs = [['Função', role], ['Cliente', client], ['Ano', year], ['Ferramentas', tools]].filter(([, value]) => value);
   const modules = Array.isArray(project.modules) ? project.modules : [];

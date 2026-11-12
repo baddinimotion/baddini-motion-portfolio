@@ -174,6 +174,21 @@ const entries = [
   ['Bruno Baddini - Portfólio Motion Designer | Animator 2D', 'Bruno Baddini - Motion Designer | 2D Animator Portfolio'],
   ['Animação de Logo + Transição Luccas Toon + PodKisses', 'Logo Animation + Transition for Luccas Toon + PodKisses'],
   ['Curta-Metragem - Batuque das Montanhas', 'Short Film - Batuque das Montanhas'],
+  ["O curta reúne música, dança e cultura para retratar a identidade local e ancestral de Teresópolis. Realizado em 2024 com a prefeitura e apoio da Lei Paulo Gustavo, o projeto contou com minha atuação na animação principal, nos rigs, no storyboard, nos efeitos visuais e na composição.","The short film uses music and dance to explore the local and ancestral identity of Teresópolis. Produced in 2024 with the city government and support from the Paulo Gustavo Law, the film featured my work in lead animation, rigging, storyboarding, visual effects, and compositing."],
+  ["Mais de 260 desenhos ajudaram a planejar as cenas e a definir o ritmo e a emoção do curta.","More than 260 drawings helped plan the scenes and shape the rhythm and emotion of the film."],
+  ["Algumas cenas mudaram ou ficaram fora do animatic enquanto a trilha ainda estava em produção.","Some scenes changed or were left out of the animatic while the soundtrack was still in production."],
+  ["Os rigs deram mais controle sobre os movimentos dos personagens e agilizaram a animação.","The rigs gave the team more control over character movement and sped up animation."],
+  ["Assistir ao curta","Watch the short film"],
+  ["Storyboard e animatic","Storyboard and animatic"],
+  ["Animatic do curta","Short film animatic"],
+  ["Animação e VFX","Animation and VFX"],
+  ["Direção de dublagem","Voice direction"],
+  ["Assistente de roteiro","Script assistant"],
+  ["Storyboard, animação e VFX","Storyboard, animation and VFX"],
+  ["Composição","Compositing"],
+  ["Sonoplastia","Sound design"],
+  ["Produção executiva","Executive production"],
+  ["Arte conceitual e design","Concept art and design"],
   ['Portfólio dos meus trabalhos como Motion Designer | Animador 2D e 3D | Video Editor | Art Director. Workcase of my journey working as Motion Designer | 2D and 3D Animator | Video Editor | Art Director.', 'A portfolio of my work as a motion designer, 2D and 3D animator, video editor and art director.']
 ];
 
