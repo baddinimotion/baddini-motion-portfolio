@@ -34,18 +34,21 @@
 
   <main id="main">
     <section class="hero-movie" aria-label="Showreel BADDINI">
-      <h1 class="sr-only">BADDINI</h1>
-      <video class="hero-video" id="hero-video" muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
-        <source media="(max-width: 800px)" src="videos/hero-mobile.mp4" type="video/mp4">
-        <source src="videos/hero.mp4" type="video/mp4">
-      </video>
-      <div class="hero-wash" aria-hidden="true"></div>
-      <img class="hero-mascot" src="images/brand/baddini-weirdo-transparente.svg" alt="BADDINI, o macaco The Weirdo">
-      <img class="hero-wordmark" src="images/brand/logo-offwhite.png" alt="BADDINI" height="40">
-      <p class="hero-hint" aria-hidden="true">Passe o mouse para assistir</p>
-      <div class="hero-controls" aria-label="Controles do showreel">
-        <button class="video-control" id="video-toggle" type="button" aria-label="Pausar vídeo">Pausar</button>
-        <button class="video-control watch-control" id="mascot-toggle" type="button" aria-label="Assistir sem o mascote">Assistir</button>
+      <h1 class="hero-title">
+        <img src="images/brand/baddini-weirdo-transparente.svg" width="1123" height="854" alt="BADDINI, o macaco The Weirdo">
+      </h1>
+      <div class="hero-reel">
+        <div class="hero-stage">
+          <div class="hero-frame">
+            <video class="hero-video" id="hero-video" muted loop playsinline preload="metadata" poster="images/hero-poster.jpg">
+              <source src="videos/baddini-showreel-original.mp4" type="video/mp4">
+              <source src="videos/baddini-showreel-full.mp4" type="video/mp4">
+            </video>
+            <div class="hero-controls" aria-label="Controles do showreel">
+              <button class="video-control" id="video-toggle" type="button" aria-label="Reproduzir vídeo">Reproduzir</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -182,35 +185,51 @@
         renderEmptyState();
       });
 
-    const hero = document.querySelector('.hero-movie');
+    const reel = document.querySelector('.hero-reel');
+    const stage = reel.querySelector('.hero-stage');
     const video = document.getElementById('hero-video');
     const videoToggle = document.getElementById('video-toggle');
-    const mascotToggle = document.getElementById('mascot-toggle');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (reducedMotion) {
-      video.pause();
-      video.removeAttribute('autoplay');
-    } else {
-      video.play().catch(() => hero.classList.add('video-blocked'));
+    if (!reducedMotion) {
+      let frameRequest = 0;
+      reel.classList.add('is-expanding');
+
+      function resizeReel() {
+        frameRequest = 0;
+        const { top, width } = reel.getBoundingClientRect();
+        const height = stage.clientHeight;
+        const progress = Math.max(0, Math.min(1, -top / (height * 0.65)));
+        const initialWidth = Math.min(width * 0.84, 760, height * 1.28);
+        const initialHeight = initialWidth * 9 / 16;
+        stage.style.setProperty('--reel-width', initialWidth + (width - initialWidth) * progress + 'px');
+        stage.style.setProperty('--reel-height', initialHeight + (height - initialHeight) * progress + 'px');
+      }
+
+      function scheduleReelResize() {
+        if (!frameRequest) frameRequest = requestAnimationFrame(resizeReel);
+      }
+
+      window.addEventListener('scroll', scheduleReelResize, { passive: true });
+      window.addEventListener('resize', scheduleReelResize);
+      resizeReel();
+      video.play().catch(() => {});
     }
 
+    function updateVideoToggle() {
+      const label = video.paused ? 'Reproduzir' : 'Pausar';
+      videoToggle.textContent = label;
+      videoToggle.setAttribute('aria-label', label + ' vídeo');
+    }
+
+    video.addEventListener('play', updateVideoToggle);
+    video.addEventListener('pause', updateVideoToggle);
     videoToggle.addEventListener('click', () => {
       if (video.paused) {
-        video.play().catch(() => hero.classList.add('video-blocked'));
-        videoToggle.textContent = 'Pausar';
-        videoToggle.setAttribute('aria-label', 'Pausar vídeo');
+        video.play().catch(updateVideoToggle);
       } else {
         video.pause();
-        videoToggle.textContent = 'Reproduzir';
-        videoToggle.setAttribute('aria-label', 'Reproduzir vídeo');
       }
-    });
-
-    mascotToggle.addEventListener('click', () => {
-      const watching = hero.classList.toggle('is-watching');
-      mascotToggle.textContent = watching ? 'Ver mascote' : 'Assistir';
-      mascotToggle.setAttribute('aria-label', watching ? 'Mostrar mascote' : 'Assistir sem o mascote');
     });
   </script>
 </body>
