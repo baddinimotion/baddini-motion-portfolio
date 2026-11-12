@@ -1,4 +1,4 @@
-import { translate } from './language.js?v=music';
+import { translate } from './language.js?v=music-toggle';
 
 const hero = document.getElementById('home');
 

@@ -1,36 +1,38 @@
 const music = document.getElementById('site-music');
-const turnOff = document.getElementById('music-off');
-const offStatus = document.getElementById('music-off-status');
+const toggle = document.getElementById('music-off');
+const onLabel = document.getElementById('music-on-label');
+const offLabel = document.getElementById('music-off-label');
 const showreel = document.getElementById('showreel');
 
-if (music && turnOff && offStatus && showreel) {
+if (music && toggle && onLabel && offLabel && showreel) {
   const storageKey = 'baddini-music-off';
-  let disabled = false;
+  let muted = false;
   try {
-    disabled = sessionStorage.getItem(storageKey) === 'true';
+    muted = sessionStorage.getItem(storageKey) === 'true';
   } catch {}
 
   function updateControl() {
-    turnOff.hidden = false;
-    turnOff.disabled = disabled;
-    offStatus.hidden = !disabled;
-    turnOff.setAttribute('aria-labelledby', disabled ? offStatus.id : 'music-off-label');
+    toggle.hidden = false;
+    toggle.toggleAttribute('data-muted', muted);
+    onLabel.hidden = !muted;
+    offLabel.hidden = muted;
+    toggle.setAttribute('aria-labelledby', muted ? onLabel.id : offLabel.id);
   }
 
   function playMusic() {
-    if (disabled || showreel.open || !music.paused) return;
+    if (muted || showreel.open || !music.paused) return;
     // Browsers that block autoplay allow another attempt after a visitor interacts.
     music.play().catch(() => {});
   }
 
-  turnOff.addEventListener('click', () => {
-    disabled = true;
-    music.pause();
+  toggle.addEventListener('click', () => {
+    muted = !muted;
+    if (muted) music.pause();
+    else playMusic();
     try {
-      sessionStorage.setItem(storageKey, 'true');
+      sessionStorage.setItem(storageKey, String(muted));
     } catch {}
     updateControl();
-    document.querySelector('[data-open="site-menu"]')?.focus();
   });
 
   // Keep the showreel's own soundtrack clear.
