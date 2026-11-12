@@ -360,12 +360,16 @@ dialog::backdrop { background: #0d0d0de0; }
 #work h2 { font-size: clamp(2.35rem, 5vw, 4.8rem); margin-bottom: 1.5rem; }
 #work .filters:empty { display: none; }
 .contact-mascot { --mascot-peek: 39%; right: max(-2.5rem, calc(var(--pad) - 5rem)); bottom: 0; width: min(37%, 29rem); transform: translate(var(--mascot-slide, 0px), var(--mascot-peek)) rotate(-14deg); pointer-events: none; }
-.contact-link:is(:hover, :focus-visible) + .contact-mascot { --mascot-slide: calc(110% + var(--pad)); }
+.contact-mascot { opacity: 1; }
+.contact-link:hover + .contact-mascot { opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
-  .contact-mascot { transition: transform .38s ease-in-out; }
+  .contact-mascot { transition: transform 250ms ease-out, opacity 250ms ease-out; }
+  .contact-link:hover + .contact-mascot {
+    --mascot-slide: calc(110% + var(--pad) + max(0px, 50vw - 52.5rem));
+  }
 }
-@media (hover: none) and (pointer: coarse) {
-  .contact-link:hover:not(:focus-visible) + .contact-mascot { --mascot-slide: 0px; }
+@media (any-hover: none) and (pointer: coarse) {
+  .contact-link:hover + .contact-mascot { --mascot-slide: 0px; opacity: 1; }
 }
 .case-back { margin-left: auto; text-align: right; }
 .case-main.is-weirdo .case-banner { padding: clamp(.5rem, 3vw, 2rem); background: var(--red); object-fit: contain; }
