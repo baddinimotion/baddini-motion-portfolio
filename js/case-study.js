@@ -48,7 +48,12 @@ function renderModule(module) {
   const src = html(assetPath(module.src));
   switch (module.type) {
     case 'text':
-      return `<section class="project-copy"><h2>${html(module.heading)}</h2><p>${html(module.credit)}</p></section>`;
+      return `<section class="project-copy"><h2>${html(module.heading)}</h2> ${module.credit ? '<p>' + html(module.credit) + '</p>' : ''}</section>`;
+    case 'credits':
+      return '<dl class="project-credits" aria-label="Créditos">' + module.items.map(({ role, name, href }) => {
+        const contributor = href ? '<a href="' + html(assetPath(href)) + '" target="_blank" rel="noopener">' + html(name) + '</a>' : html(name);
+        return '<div><dt>' + html(role) + '</dt><dd>' + contributor + '</dd></div>';
+      }).join('') + '</dl>';
     case 'prose':
       return '<p class="project-prose">' + html(module.text) + '</p>';
     case 'image':
@@ -113,7 +118,9 @@ function renderProject(project, next) {
   root.classList.toggle('is-podkisses', isPodkisses);
   const isDotEnergy = project.layout === 'dot-energy';
   root.classList.toggle('is-dot-energy', isDotEnergy);
-  const showBanner = !isPodkisses && !isDotEnergy && project.id !== 'bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d';
+  const isMonify = project.layout === 'monify';
+  root.classList.toggle('is-monify', isMonify);
+  const showBanner = !isPodkisses && !isDotEnergy && !isMonify && project.id !== 'bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d';
   root.classList.toggle('is-weirdo', project === mascot);
   const specs = [['Função', role], ['Cliente', client], ['Ano', year], ['Ferramentas', tools]].filter(([, value]) => value);
   const modules = Array.isArray(project.modules) ? project.modules : [];

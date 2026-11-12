@@ -493,14 +493,21 @@ html[lang="en"] .weird-expressions figcaption {
 html[lang="en"] .weird-expressions-art { aspect-ratio: 1440 / 950; }
 html[lang="en"] .weird-expressions-art img { transform: none; }
 
-:is(.is-podkisses, .is-dot-energy) .modules { --module-gap: clamp(1rem, 3vw, 2.25rem); width: min(100%, 75rem); margin-inline: auto; }
-:is(.is-podkisses, .is-dot-energy) .modules > * { margin-block: 0 var(--module-gap); }
-:is(.is-podkisses, .is-dot-energy) .project-still { width: 100%; height: auto; }
-:is(.is-podkisses, .is-dot-energy) .project-video video { width: 100%; height: auto; }
-:is(.is-podkisses, .is-dot-energy) .project-video:has(video[src$=".webm"]) video { background: var(--ink); }
-:is(.is-podkisses, .is-dot-energy) .project-prose { max-width: 64ch; margin-inline: auto; text-align: center; }
-:is(.is-podkisses, .is-dot-energy) .project-process { text-align: center; }
-:is(.is-podkisses, .is-dot-energy) .project-process img { display: block; width: min(100%, 36rem); height: auto; margin-inline: auto; }
-:is(.is-podkisses, .is-dot-energy) figcaption { margin-top: .55rem; text-align: center; font-family: var(--mono); font-size: .72rem; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .modules { --module-gap: clamp(1rem, 3vw, 2.25rem); width: min(100%, 75rem); margin-inline: auto; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .modules > * { margin-block: 0 var(--module-gap); }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .project-still { width: 100%; height: auto; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .project-video video { width: 100%; height: auto; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .project-video:has(video[src$=".webm"]) video { background: var(--ink); }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .project-prose { max-width: 64ch; margin-inline: auto; text-align: center; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .project-process { text-align: center; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) .project-process img { display: block; width: min(100%, 36rem); height: auto; margin-inline: auto; }
+:is(.is-podkisses, .is-dot-energy, .is-monify) figcaption { margin-top: .55rem; text-align: center; font-family: var(--mono); font-size: .72rem; }
 
 .is-dot-energy .gallery--uniform img { height: auto; }
+
+.is-monify .gallery--uniform img { height: auto; }
+.is-monify .gallery--uniform[data-item-count="2"] { grid-template-columns: minmax(0, 1.686fr) minmax(0, 1.798fr); }
+.is-monify .gallery--uniform:has(img[src$="monify-03.gif"]) { grid-template-columns: minmax(0, 1.746fr) minmax(0, .524fr) minmax(0, .993fr); }
+.is-monify .project-credits { display: grid; gap: .65rem; max-width: 38rem; margin-inline: auto; text-align: center; }
+.is-monify .project-credits dt { font-weight: 700; }
+.is-monify .project-credits dd { margin: 0; }

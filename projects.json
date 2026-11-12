@@ -574,7 +574,7 @@
     "id": "monify-motion-video-monify-motion-video",
     "title": "Monify Motion Video",
     "category": "Motion Design",
-    "year": "",
+    "year": "2024",
     "client": "",
     "tools": "",
     "description": "",
@@ -583,10 +583,117 @@
     "modules": [
       {
         "type": "image",
-        "src": "images/projects/monify-motion-video-monify-motion-video/cover.png"
+        "src": "images/projects/monify-motion-video-monify-motion-video/monify-logo.png",
+        "alt": "Logotipo Monify"
+      },
+      {
+        "type": "video",
+        "src": "images/projects/monify-motion-video-monify-motion-video/monify-ad-campain.mp4",
+        "title": "Monify Motion Video"
+      },
+      {
+        "type": "text",
+        "heading": "Projeto",
+        "credit": "Motion branding para o aplicativo fictício de finanças Monify."
+      },
+      {
+        "type": "text",
+        "heading": "Animações"
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/monify-motion-video-monify-motion-video/monify-01.gif",
+            "alt": "Animação 1 do Monify"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/monify-motion-video-monify-motion-video/monify-02.gif",
+            "alt": "Animação 2 do Monify"
+          }
+        ]
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/monify-motion-video-monify-motion-video/monify-03.gif",
+            "alt": "Animação 3 do Monify"
+          },
+          {
+            "type": "image",
+            "src": "https://mir-s3-cdn-cf.behance.net/project_modules/disp_webp/72dc23210656229.671580511c7ae.gif",
+            "alt": "Animação 4 do Monify"
+          },
+          {
+            "type": "image",
+            "src": "https://mir-s3-cdn-cf.behance.net/project_modules/disp_webp/f019db210656229.671580511d1bf.gif",
+            "alt": "Animação 5 do Monify"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Style Frames"
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/monify-motion-video-monify-motion-video/layout-01.png",
+            "alt": "Style frame 1 do Monify"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/monify-motion-video-monify-motion-video/layout-02.png",
+            "alt": "Style frame 2 do Monify"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/monify-motion-video-monify-motion-video/layout-03.png",
+            "alt": "Style frame 3 do Monify"
+          }
+        ]
+      },
+      {
+        "type": "credits",
+        "items": [
+          {
+            "role": "Direção",
+            "name": "@levymotion",
+            "href": "https://www.instagram.com/levymotion/"
+          },
+          {
+            "role": "Roteiro",
+            "name": "@motion.insider",
+            "href": "https://www.instagram.com/motion.insider/"
+          },
+          {
+            "role": "Ilustrações",
+            "name": "@laridacriatella",
+            "href": "https://www.instagram.com/laridacriatella/"
+          },
+          {
+            "role": "Animação",
+            "name": "Bruno Baddini"
+          }
+        ]
+      },
+      {
+        "type": "prose",
+        "text": "Projeto fictício criado durante a maratona de motion da Motion Insider."
       }
     ],
-    "external": true
+    "external": false,
+    "manual": true,
+    "layout": "monify"
   },
   {
     "id": "curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas",

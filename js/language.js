@@ -1,4 +1,22 @@
 const entries = [
+  ["Logotipo Monify","Monify logo"],
+  ["Projeto","Project"],
+  ["Animações","Animations"],
+  ["Créditos","Credits"],
+  ["Direção","Direction"],
+  ["Roteiro","Script"],
+  ["Ilustrações","Illustration"],
+  ["Animação","Animation"],
+  ["Motion branding para o aplicativo fictício de finanças Monify.","Motion branding for the fictional finance app Monify."],
+  ["Projeto fictício criado durante a maratona de motion da Motion Insider.","A fictional project created during Motion Insider’s motion design marathon."],
+  ["Animação 1 do Monify","Monify animation 1"],
+  ["Animação 2 do Monify","Monify animation 2"],
+  ["Animação 3 do Monify","Monify animation 3"],
+  ["Animação 4 do Monify","Monify animation 4"],
+  ["Animação 5 do Monify","Monify animation 5"],
+  ["Style frame 1 do Monify","Monify style frame 1"],
+  ["Style frame 2 do Monify","Monify style frame 2"],
+  ["Style frame 3 do Monify","Monify style frame 3"],
   ["DOT ENERGY — Projeto autoral de motion design para uma bala energética. A peça comunica praticidade, velocidade e energia, com uma mensagem pensada para funcionar também sem som.","DOT ENERGY — A personal motion design project for an energy candy. The spot conveys convenience, speed and energy, with a message designed to work without sound."],
   ["A campanha combina fotografias do produto com ilustração flat. A animação usa movimentos rápidos e fluidos para transmitir a energia da marca.","The campaign combines product photography with flat illustration. Quick, fluid movements convey the energy of the brand."],
   ["Processo","Process"],
@@ -150,9 +168,9 @@ const storageKey = 'baddini-language';
 const attributes = ['aria-label', 'alt', 'title'];
 const mediaPrefix = /^((?:The Weirdo) — |Próximo: )(.+?)( ↗)?$/;
 
-let language = 'pt';
+let language = 'en';
 try {
-  if (localStorage.getItem(storageKey) === 'en') language = 'en';
+  if (sessionStorage.getItem(storageKey) === 'pt') language = 'pt';
 } catch {}
 
 export function translate(text) {
@@ -208,7 +226,7 @@ if (header) {
     const button = event.target.closest('button');
     if (!button) return;
     language = button.dataset.locale;
-    try { localStorage.setItem(storageKey, language); } catch {}
+    try { sessionStorage.setItem(storageKey, language); } catch {}
     updateLanguage();
   });
   updateLanguage();
