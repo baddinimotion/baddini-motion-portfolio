@@ -95,6 +95,21 @@ if (reel && video) {
 }
 
 const list = document.getElementById('projects');
+const touchProjectPreview = matchMedia('(hover: none) and (pointer: coarse)');
+
+list?.addEventListener('click', (event) => {
+  if (!touchProjectPreview.matches || event.detail === 0 || event.defaultPrevented ||
+      event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+  const row = event.target.closest('.project-row');
+  if (!row) return;
+  const item = row.parentElement;
+  if (item.hasAttribute('data-preview-open')) return;
+
+  event.preventDefault();
+  list.querySelector('[data-preview-open]')?.removeAttribute('data-preview-open');
+  item.setAttribute('data-preview-open', '');
+});
 
 function makeText(tag, className, value) {
   const element = document.createElement(tag);
@@ -143,6 +158,7 @@ async function renderWork() {
         button.type = 'button';
         button.setAttribute('aria-pressed', String(index === 0));
         button.addEventListener('click', () => {
+          list.querySelector('[data-preview-open]')?.removeAttribute('data-preview-open');
           buttons.forEach((filter) => filter.setAttribute('aria-pressed', String(filter === button)));
           rows.forEach((row) => { row.hidden = index > 0 && row.dataset.category !== category; });
         });

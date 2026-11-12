@@ -114,6 +114,9 @@ em { color: var(--red); font-style: normal; }
 @media (hover: hover) and (pointer: fine) {
   .projects > li:hover > .project-preview { grid-template-rows: 1fr; opacity: 1; }
 }
+@media (hover: none) and (pointer: coarse) {
+  .projects > li[data-preview-open] > .project-preview { grid-template-rows: 1fr; opacity: 1; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .project-preview { transition: grid-template-rows 300ms ease-out, opacity 220ms ease-out; }
 }
