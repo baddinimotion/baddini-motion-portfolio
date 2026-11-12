@@ -1,7 +1,7 @@
 import { localize, translate } from './language.js?v=music-toggle';
 import './hero.js?v=music-toggle';
 import './music.js?v=default-on';
-import { loadProjects, assetPath } from './projects.js?v=tsuna-cover';
+import { loadProjects, assetPath } from './projects.js?v=gif-covers';
 
 const menu = document.getElementById('site-menu');
 const reel = document.getElementById('showreel');
