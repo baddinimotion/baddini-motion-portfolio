@@ -493,12 +493,14 @@ html[lang="en"] .weird-expressions figcaption {
 html[lang="en"] .weird-expressions-art { aspect-ratio: 1440 / 950; }
 html[lang="en"] .weird-expressions-art img { transform: none; }
 
-.is-podkisses .modules { --module-gap: clamp(1rem, 3vw, 2.25rem); width: min(100%, 75rem); margin-inline: auto; }
-.is-podkisses .modules > * { margin-block: 0 var(--module-gap); }
-.is-podkisses .project-still { width: 100%; height: auto; }
-.is-podkisses .project-video video { width: 100%; height: auto; }
-.is-podkisses .project-video:has(video[src$=".webm"]) video { background: var(--ink); }
-.is-podkisses .project-prose { max-width: 64ch; margin-inline: auto; text-align: center; }
-.is-podkisses .project-process { text-align: center; }
-.is-podkisses .project-process img { display: block; width: min(100%, 36rem); height: auto; margin-inline: auto; }
-.is-podkisses figcaption { margin-top: .55rem; text-align: center; font-family: var(--mono); font-size: .72rem; }
+:is(.is-podkisses, .is-dot-energy) .modules { --module-gap: clamp(1rem, 3vw, 2.25rem); width: min(100%, 75rem); margin-inline: auto; }
+:is(.is-podkisses, .is-dot-energy) .modules > * { margin-block: 0 var(--module-gap); }
+:is(.is-podkisses, .is-dot-energy) .project-still { width: 100%; height: auto; }
+:is(.is-podkisses, .is-dot-energy) .project-video video { width: 100%; height: auto; }
+:is(.is-podkisses, .is-dot-energy) .project-video:has(video[src$=".webm"]) video { background: var(--ink); }
+:is(.is-podkisses, .is-dot-energy) .project-prose { max-width: 64ch; margin-inline: auto; text-align: center; }
+:is(.is-podkisses, .is-dot-energy) .project-process { text-align: center; }
+:is(.is-podkisses, .is-dot-energy) .project-process img { display: block; width: min(100%, 36rem); height: auto; margin-inline: auto; }
+:is(.is-podkisses, .is-dot-energy) figcaption { margin-top: .55rem; text-align: center; font-family: var(--mono); font-size: .72rem; }
+
+.is-dot-energy .gallery--uniform img { height: auto; }

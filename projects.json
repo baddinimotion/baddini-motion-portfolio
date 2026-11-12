@@ -443,7 +443,7 @@
     "id": "dot-energy-dot-energy",
     "title": "DOT ENERGY",
     "category": "Motion Design",
-    "year": "",
+    "year": "2025",
     "client": "",
     "tools": "",
     "description": "",
@@ -452,10 +452,123 @@
     "modules": [
       {
         "type": "image",
-        "src": "images/projects/dot-energy-dot-energy/cover.png"
+        "src": "images/projects/dot-energy-dot-energy/dotfundoazul.png",
+        "alt": "DOT ENERGY"
+      },
+      {
+        "type": "prose",
+        "text": "DOT ENERGY — Projeto autoral de motion design para uma bala energética. A peça comunica praticidade, velocidade e energia, com uma mensagem pensada para funcionar também sem som."
+      },
+      {
+        "type": "video",
+        "src": "images/projects/dot-energy-dot-energy/dot-energy-motion-ad.mp4",
+        "poster": "images/projects/dot-energy-dot-energy/poster.png",
+        "title": "DOT ENERGY — Motion AD"
+      },
+      {
+        "type": "image",
+        "src": "images/projects/dot-energy-dot-energy/LAYOUTS.png",
+        "alt": "Layouts"
+      },
+      {
+        "type": "prose",
+        "text": "A campanha combina fotografias do produto com ilustração flat. A animação usa movimentos rápidos e fluidos para transmitir a energia da marca."
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/01.png",
+            "alt": "Quadro 1 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/02.png",
+            "alt": "Quadro 2 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/03.png",
+            "alt": "Quadro 3 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/04.png",
+            "alt": "Quadro 4 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/05.png",
+            "alt": "Quadro 5 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/poster.png",
+            "alt": "Quadro 6 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/06.png",
+            "alt": "Quadro 7 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/07.png",
+            "alt": "Quadro 8 da campanha DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/08.png",
+            "alt": "Quadro 9 da campanha DOT ENERGY"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "images/projects/dot-energy-dot-energy/storyboard.png",
+        "alt": "Storyboard"
+      },
+      {
+        "type": "image",
+        "src": "images/projects/dot-energy-dot-energy/sotybourd.png",
+        "alt": "Storyboard da campanha DOT ENERGY"
+      },
+      {
+        "type": "image",
+        "src": "images/projects/dot-energy-dot-energy/PROCESS.png",
+        "alt": "Processo"
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/gif01.gif",
+            "alt": "Etapa 1 da animação DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/gif02.gif",
+            "alt": "Etapa 2 da animação DOT ENERGY"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/dot-energy-dot-energy/gif03.gif",
+            "alt": "Etapa 3 da animação DOT ENERGY"
+          }
+        ]
+      },
+      {
+        "type": "prose",
+        "text": "Obrigado por assistir."
       }
     ],
-    "external": true
+    "external": false,
+    "layout": "dot-energy",
+    "manual": true
   },
   {
     "id": "monify-motion-video-monify-motion-video",

@@ -29,8 +29,8 @@ function renderGallery(module) {
   const items = Array.isArray(module.items) ? module.items : [];
   if (!items.length) return '';
   const count = items.length;
-  const columns = count === 4 ? 3 : count === 3 ? 2 : Math.min(count, 3);
-  const layout = count === 3 || count === 4 ? 'gallery--mixed' : 'columns-' + columns;
+  const columns = module.uniform ? Math.min(count, 3) : count === 4 ? 3 : count === 3 ? 2 : Math.min(count, 3);
+  const layout = module.uniform ? 'columns-' + columns + ' gallery--uniform' : count === 3 || count === 4 ? 'gallery--mixed' : 'columns-' + columns;
   const media = items.map((item) => {
     const src = html(assetPath(item.src));
     const label = html(item.alt);
@@ -70,7 +70,7 @@ function renderModule(module) {
 }
 
 function classifyGalleries() {
-  root.querySelectorAll('.project-gallery').forEach((gallery) => {
+  root.querySelectorAll('.project-gallery:not(.gallery--uniform)').forEach((gallery) => {
     const items = [...gallery.children];
     const count = items.length;
     const classify = () => {
@@ -111,7 +111,9 @@ function renderProject(project, next) {
   const { title, category, year, client, role, tools, description } = project;
   const isPodkisses = project.layout === 'podkisses';
   root.classList.toggle('is-podkisses', isPodkisses);
-  const showBanner = !isPodkisses && project.id !== 'bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d';
+  const isDotEnergy = project.layout === 'dot-energy';
+  root.classList.toggle('is-dot-energy', isDotEnergy);
+  const showBanner = !isPodkisses && !isDotEnergy && project.id !== 'bruno-baddini-portfolio-motion-designer-animator-2d-bruno-baddini-portfolio-motion-designer-animator-2d';
   root.classList.toggle('is-weirdo', project === mascot);
   const specs = [['Função', role], ['Cliente', client], ['Ano', year], ['Ferramentas', tools]].filter(([, value]) => value);
   const modules = Array.isArray(project.modules) ? project.modules : [];
