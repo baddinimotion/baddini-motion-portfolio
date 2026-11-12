@@ -1,4 +1,4 @@
-const music = document.getElementById('menu-music');
+const music = document.getElementById('site-music');
 const turnOff = document.getElementById('music-off');
 const offStatus = document.getElementById('music-off-status');
 const showreel = document.getElementById('showreel');
@@ -28,7 +28,7 @@ if (music && turnOff && offStatus && showreel) {
       sessionStorage.setItem(storageKey, 'true');
     } catch {}
     updateControl();
-    document.querySelector('#site-menu [data-close]')?.focus();
+    document.querySelector('[data-open="site-menu"]')?.focus();
   });
 
   // Keep the showreel's own soundtrack clear.
