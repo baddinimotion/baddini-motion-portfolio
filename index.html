@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="./images/brand/Baddini_Avatar_1080x1080.png">
-  <link rel="stylesheet" href="./css/style.css?v=header-music">
-  <script type="module" src="./js/main.js?v=header-music"></script>
+  <link rel="stylesheet" href="./css/style.css?v=music-status">
+  <script type="module" src="./js/main.js?v=music-status"></script>
 </head>
 <body>
   <a class="skip" href="#main">Pular para o conteúdo</a>
@@ -24,9 +24,11 @@
     <a class="availability mono" href="#contact"><span><span class="availability-verb">Consulte </span>disponibilidade · 2026</span></a>
     <div class="top-actions">
       <audio id="site-music" src="./music/have-it-all-tatami-quiet.mp3" preload="none" loop></audio>
-      <button id="music-off" class="menu-button music-button" type="button" aria-label="Desligar música" title="Desligar música" hidden>
+      <button id="music-off" class="menu-button music-button" type="button" aria-labelledby="music-off-label" hidden>
+        <span id="music-off-label" class="sr-only">Desligar música</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M11 5 6 9H3v6h3l5 4zM15 9a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/>
+          <path class="music-off-mark" d="m3 3 18 18"/>
         </svg>
       </button>
       <span id="music-off-status" class="sr-only" role="status" hidden>Música desligada</span>

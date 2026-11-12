@@ -51,6 +51,9 @@ em { color: var(--red); font-style: normal; }
 .menu-button span { margin-left: .25rem; }
 .top-actions { display: flex; align-items: center; gap: .4rem; }
 .music-button { display: grid; place-items: center; min-width: 2.5rem; padding: 0; }
+.music-off-mark { display: none; }
+.music-button:disabled { cursor: default; opacity: .6; background: transparent; }
+.music-button:disabled .music-off-mark { display: block; }
 @media (max-width: 1040px) {
   .top .availability { display: none; }
   .top-actions { margin-left: auto; }

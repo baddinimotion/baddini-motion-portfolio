@@ -11,8 +11,10 @@ if (music && turnOff && offStatus && showreel) {
   } catch {}
 
   function updateControl() {
-    turnOff.hidden = disabled;
+    turnOff.hidden = false;
+    turnOff.disabled = disabled;
     offStatus.hidden = !disabled;
+    turnOff.setAttribute('aria-labelledby', disabled ? offStatus.id : 'music-off-label');
   }
 
   function playMusic() {
