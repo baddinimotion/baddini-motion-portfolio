@@ -74,26 +74,7 @@ em { color: var(--red); font-style: normal; }
 .section { padding-block: clamp(3rem, 8vw, 8rem); }
 .section-label { display: flex; align-items: center; gap: .7rem; margin-bottom: clamp(1.2rem, 3vw, 2.5rem); }
 .section-label span { display: grid; place-items: center; min-width: 2rem; min-height: 1.6rem; border: 1px solid currentColor; }
-.section-preview { display: none; }
-@media (hover: hover) and (pointer: fine) {
-  .section-preview {
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .section-preview > div { min-height: 0; overflow: hidden; }
-  .section-preview img {
-    width: 100%;
-    height: clamp(10rem, 23vw, 22rem);
-    margin-block: .75rem;
-    object-fit: cover;
-  }
-  .section-accordion:hover .section-preview { grid-template-rows: 1fr; opacity: 1; }
-}
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .section-preview { transition: grid-template-rows 300ms ease-out, opacity 220ms ease-out; }
-}
+
 .about-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem clamp(1.5rem, 6vw, 8rem); }
 .about-layout h2 { font-size: clamp(3.4rem, 7.8vw, 9rem); }
 .about-copy { align-self: center; max-width: 62ch; }
@@ -118,21 +99,27 @@ em { color: var(--red); font-style: normal; }
 .project-row .arrow { font-size: 1.45rem; line-height: 1; transition: transform .18s; }
 .project-row:hover, .project-row:focus-visible { color: var(--red); }
 .project-row:hover .arrow, .project-row:focus-visible .arrow { transform: translate(.2rem, -.2rem); }
-.project-preview { display: none; position: fixed; z-index: 16; pointer-events: none; inset: 0 auto auto 0; width: min(17rem, 27vw); transform: translate(var(--x), var(--y)); }
-.project-preview img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 2px solid var(--ink); background: var(--ink); box-shadow: .28rem .28rem 0 var(--ink); }
-.preview-cursor { position: absolute; left: var(--cursor-x); top: var(--cursor-y); display: grid; place-items: center; width: 3.25rem; aspect-ratio: 1; transform: translate(-50%, -50%); background: var(--red); color: var(--ink); border: 1px solid var(--ink); border-radius: 50%; box-shadow: 0 0 0 .3rem #e52e2e38; }
-@keyframes cursor-grow {
-  from { transform: translate(-50%, -50%) scale(.2); }
-  to { transform: translate(-50%, -50%) scale(1); }
+.project-preview { display: grid; grid-template-rows: 0fr; opacity: 0; }
+.project-preview > div { min-height: 0; overflow: hidden; }
+.project-preview img {
+  width: 100%;
+  height: clamp(10rem, 27vw, 24rem);
+  object-fit: contain;
+  background: var(--ink);
 }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .project-preview.is-active { display: block; }
-  .project-preview.is-active .preview-cursor { animation: cursor-grow .18s ease-out; }
+.projects > li:has(.project-row:focus-visible) > .project-preview {
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
-
+@media (hover: hover) and (pointer: fine) {
+  .projects > li:hover > .project-preview { grid-template-rows: 1fr; opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .project-preview { transition: grid-template-rows 300ms ease-out, opacity 220ms ease-out; }
+}
 
 .contact { background: var(--red); color: var(--ink); border-block: 2px solid var(--ink); overflow: hidden; }
-.contact > .wrap:not(.section-preview) { position: relative; padding-block: clamp(2rem, 6vw, 6rem); }
+.contact .wrap { position: relative; padding-block: clamp(2rem, 6vw, 6rem); }
 .contact h2 { color: var(--white); position: relative; z-index: 1; font-size: clamp(3.5rem, 11vw, 11rem); max-width: 74%; }
 .contact-link { position: relative; z-index: 1; display: inline-block; margin-top: 1rem; }
 .contact-link:hover { color: var(--white); }
@@ -202,7 +189,6 @@ dialog::backdrop { background: #0d0d0de0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *:not(.hero-marquee-track), *::before, *::after { animation: none !important; transition: none !important; }
-  .project-preview.is-active { display: none; }
 }
 
 .modules { margin-block: 2rem; }

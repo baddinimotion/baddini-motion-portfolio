@@ -103,60 +103,18 @@ function makeText(tag, className, value) {
   return element;
 }
 
-function attachPreview() {
-  const preview = document.querySelector('.project-preview');
-  const image = preview.querySelector('img');
-  const canHover = matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
-  let activeRow;
-  let frame = 0;
-  let point;
-  const hide = () => {
-    activeRow = undefined;
-    preview.classList.remove('is-active');
-  };
-  list.addEventListener('pointermove', (event) => {
-    const row = event.target.closest('.project-row');
-    if (!row || !canHover.matches || event.pointerType === 'touch') return hide();
-    if (activeRow !== row) {
-      activeRow = row;
-      image.src = row.dataset.cover;
-    }
-    point = { x: event.clientX, y: event.clientY };
-    if (frame) return;
-    frame = requestAnimationFrame(() => {
-      frame = 0;
-      if (!activeRow) return;
-      preview.classList.add('is-active');
-      const width = preview.offsetWidth;
-      const height = preview.offsetHeight;
-      const { x, y } = point;
-      const left = x + width + 28 < innerWidth ? x + 28 : Math.max(10, x - width - 28);
-      const top = Math.max(10, Math.min(y - height / 2, innerHeight - height - 10));
-      preview.style.setProperty('--x', left + 'px');
-      preview.style.setProperty('--y', top + 'px');
-      preview.style.setProperty('--cursor-x', (x - left) + 'px');
-      preview.style.setProperty('--cursor-y', (y - top) + 'px');
-    });
-  });
-  list.addEventListener('pointerleave', hide);
-  window.addEventListener('scroll', hide, { passive: true });
-  return hide;
-}
-
 async function renderWork() {
   const filters = document.getElementById('filters');
   const status = document.getElementById('projects-status');
   try {
     const projects = await loadProjects();
     if (!projects.length) throw new Error('Lista vazia');
-    const hidePreview = attachPreview();
     const rows = projects.map((project, index) => {
       const item = document.createElement('li');
       item.dataset.category = project.category || 'Geral';
       const row = document.createElement('a');
       row.className = 'project-row';
       row.href = './case-study.html?id=' + encodeURIComponent(project.id);
-      row.dataset.cover = assetPath(project.cover || 'images/brand/Baddini_Avatar_1080x1080.png');
       const indexLabel = makeText('span', 'mono', String(index + 1).padStart(2, '0'));
       const arrow = makeText('span', 'arrow', '↗');
       indexLabel.setAttribute('aria-hidden', 'true');
@@ -164,7 +122,17 @@ async function renderWork() {
       row.append(indexLabel, makeText('h3', '', project.title),
         makeText('span', 'project-category mono', item.dataset.category),
         makeText('span', 'project-year mono', project.year || ''), arrow);
-      item.append(row);
+      const preview = document.createElement('div');
+      preview.className = 'project-preview';
+      preview.setAttribute('aria-hidden', 'true');
+      const frame = document.createElement('div');
+      const image = document.createElement('img');
+      image.src = assetPath(project.cover || 'images/brand/Baddini_Avatar_1080x1080.png');
+      image.alt = '';
+      image.loading = 'lazy';
+      frame.append(image);
+      preview.append(frame);
+      item.append(row, preview);
       return item;
     });
     list.replaceChildren(...rows);
@@ -175,7 +143,6 @@ async function renderWork() {
         button.type = 'button';
         button.setAttribute('aria-pressed', String(index === 0));
         button.addEventListener('click', () => {
-          hidePreview();
           buttons.forEach((filter) => filter.setAttribute('aria-pressed', String(filter === button)));
           rows.forEach((row) => { row.hidden = index > 0 && row.dataset.category !== category; });
         });
