@@ -1,5 +1,5 @@
-import { localize, translate } from './language.js?v=music-toggle';
-import './hero.js?v=music-toggle';
+import { localize, translate } from './language.js?v=about-intro';
+import './hero.js?v=about-intro';
 import './music.js?v=default-on';
 import { loadProjects, assetPath } from './projects.js?v=gif-covers';
 
