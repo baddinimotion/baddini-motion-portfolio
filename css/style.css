@@ -356,13 +356,13 @@ dialog::backdrop { background: #0d0d0de0; }
 .manifesto { background: var(--paper); color: var(--ink); }
 .manifesto-notes { border-color: #0d0d0d55; }
 .manifesto-notes p { color: var(--dark); }
-.contact-mascot { right: max(-2.5rem, calc(var(--pad) - 5rem)); bottom: 0; width: min(37%, 29rem); transform: translateY(39%) rotate(-14deg); pointer-events: none; }
+.contact-mascot { --mascot-peek: 39%; right: max(-2.5rem, calc(var(--pad) - 5rem)); bottom: 0; width: min(37%, 29rem); transform: translate(var(--mascot-slide, 0px), var(--mascot-peek)) rotate(-14deg); pointer-events: none; }
+.contact-link:is(:hover, :focus-visible) + .contact-mascot { --mascot-slide: calc(110% + var(--pad)); }
 @media (prefers-reduced-motion: no-preference) {
-  .contact-mascot { transition: translate .38s ease-in-out; }
-  .contact-link:focus-visible + .contact-mascot { translate: calc(110% + var(--pad)) 0; }
+  .contact-mascot { transition: transform .38s ease-in-out; }
 }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .contact-link:hover + .contact-mascot { translate: calc(110% + var(--pad)) 0; }
+@media (hover: none) and (pointer: coarse) {
+  .contact-link:hover:not(:focus-visible) + .contact-mascot { --mascot-slide: 0px; }
 }
 .case-back { margin-left: auto; text-align: right; }
 .case-main.is-weirdo .case-banner { padding: clamp(.5rem, 3vw, 2rem); background: var(--red); object-fit: contain; }
@@ -381,7 +381,7 @@ dialog::backdrop { background: #0d0d0de0; }
   .hero h1 span { display: inline; }
   .hero-lead { padding-top: .75rem; }
   .case-back { max-width: 32%; font-size: .61rem; }
-  .contact-mascot { right: -.5rem; width: min(47%, 16rem); transform: translateY(32%) rotate(-14deg); }
+  .contact-mascot { --mascot-peek: 32%; right: -.5rem; width: min(47%, 16rem); }
 }
 
 .hero { padding-top: 0; }
