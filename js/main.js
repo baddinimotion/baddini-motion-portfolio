@@ -1,5 +1,5 @@
 import { localize, translate } from './language.js';
-import './hero.js';
+import './hero.js?v=mobile-reel';
 import { loadProjects, assetPath } from './projects.js';
 
 const menu = document.getElementById('site-menu');

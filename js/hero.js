@@ -13,6 +13,9 @@ if (hero) {
   const playback = hero.querySelector('.hero-video-control');
   const marquee = hero.querySelector('.hero-marquee');
   const ticker = hero.querySelector('.marquee-toggle');
+  const mobilePlayback = window.matchMedia('(max-width: 760px), (pointer: coarse)');
+  video.defaultMuted = true;
+  video.muted = true;
   let frame = 0;
   let inPlaybackZone = false;
   let tickerPaused = false;
@@ -41,10 +44,12 @@ if (hero) {
     stage.style.setProperty('--hero-copy-opacity', String(Math.max(0, 1 - progress * 1.65)));
     stage.classList.toggle('is-film-forward', progress >= .62);
 
-    const shouldPlay = progress >= 1 && bounds.top >= -media.height * .18 && !document.hidden;
+    const startProgress = mobilePlayback.matches ? .75 : 1;
+    const shouldPlay = progress >= startProgress && bounds.top >= -media.height * .18 && !document.hidden;
     playback.hidden = !shouldPlay && document.activeElement !== playback;
     if (shouldPlay !== inPlaybackZone) {
       inPlaybackZone = shouldPlay;
+      video.autoplay = shouldPlay;
       if (shouldPlay) video.play().catch(updateLabels);
       else video.pause();
     }
@@ -56,7 +61,10 @@ if (hero) {
 
   playback.addEventListener('click', () => {
     if (video.paused) video.play().catch(updateLabels);
-    else video.pause();
+    else {
+      video.autoplay = false;
+      video.pause();
+    }
   });
   playback.addEventListener('blur', scheduleRender);
   video.addEventListener('play', updateLabels);
