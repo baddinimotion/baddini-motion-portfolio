@@ -1,4 +1,4 @@
-import { translate } from './language.js';
+import { translate } from './language.js?v=guts';
 
 const hero = document.getElementById('home');
 
