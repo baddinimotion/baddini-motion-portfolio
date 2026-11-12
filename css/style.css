@@ -104,7 +104,7 @@ em { color: var(--red); font-style: normal; }
 .project-preview img {
   width: 100%;
   height: clamp(10rem, 27vw, 24rem);
-  object-fit: contain;
+  object-fit: cover;
   background: var(--ink);
 }
 .projects > li:has(.project-row:focus-visible) > .project-preview {
