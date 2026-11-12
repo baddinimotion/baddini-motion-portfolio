@@ -134,6 +134,8 @@ const entries = [
   ['Fechar showreel', 'Close reel'],
   ['Reproduzir', 'Play'],
   ['Pausar', 'Pause'],
+  ['Desligar música', 'Turn off music'],
+  ['Música desligada', 'Music off'],
   ['Posição do vídeo', 'Video position'],
   ['Tela cheia', 'Fullscreen'],
   ['Não foi possível carregar o showreel.', 'The showreel could not be loaded.'],

@@ -1,5 +1,6 @@
-import { localize, translate } from './language.js?v=guts';
-import './hero.js?v=guts';
+import { localize, translate } from './language.js?v=music';
+import './hero.js?v=music';
+import './music.js';
 import { loadProjects, assetPath } from './projects.js';
 
 const menu = document.getElementById('site-menu');

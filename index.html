@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="./images/brand/Baddini_Avatar_1080x1080.png">
-  <link rel="stylesheet" href="./css/style.css?v=guts">
-  <script type="module" src="./js/main.js?v=guts"></script>
+  <link rel="stylesheet" href="./css/style.css?v=music">
+  <script type="module" src="./js/main.js?v=music"></script>
 </head>
 <body>
   <a class="skip" href="#main">Pular para o conteúdo</a>
@@ -30,6 +30,11 @@
       <button class="menu-button mono" type="button" data-close aria-label="Fechar menu" autofocus>Fechar ×</button>
     </div>
     <h2 id="menu-heading" class="sr-only">Menu principal</h2>
+    <div class="menu-music">
+      <audio id="menu-music" src="./music/have-it-all-tatami.mp3" preload="none" loop></audio>
+      <button id="music-off" class="menu-button mono" type="button" hidden>Desligar música</button>
+      <span id="music-off-status" class="mono" role="status" hidden>Música desligada</span>
+    </div>
     <nav aria-label="Menu principal">
       <a href="#home">Início</a><a href="#about">Sobre</a><a href="#work">Trabalhos</a><a href="#manifesto">Manifesto</a><a href="#weird">Weirdo</a><a href="#contact">Contato ↗</a>
     </nav>

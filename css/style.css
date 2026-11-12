@@ -120,6 +120,8 @@ dialog::backdrop { background: #0d0d0de0; }
 .site-menu nav { display: grid; padding-block: clamp(1rem, 4svh, 3rem); }
 .site-menu nav a { font: 400 clamp(2.8rem, 10svh, 7.5rem)/.96 var(--display); text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--slate); padding-block: .18em; }
 .site-menu nav a:hover { color: var(--red); }
+.menu-music { margin-top: .85rem; }
+.menu-music:has(button[hidden]):has([role="status"][hidden]) { display: none; }
 .reel-dialog { width: min(65rem, 95vw); max-height: 95svh; padding: clamp(.6rem, 2vw, 1.4rem); }
 .reel-header { margin-bottom: .7rem; }
 .reel-dialog video { width: 100%; max-height: 68svh; aspect-ratio: 16 / 9; background: #000; object-fit: contain; }
