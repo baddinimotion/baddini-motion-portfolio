@@ -1,6 +1,6 @@
 import { localize, translate } from './language.js?v=about-intro';
 import './hero.js?v=about-intro';
-import './music.js?v=default-on';
+import './music.js?v=autoplay';
 import { loadProjects, assetPath } from './projects.js?v=gif-covers';
 
 const menu = document.getElementById('site-menu');

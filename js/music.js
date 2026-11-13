@@ -9,20 +9,21 @@ if (music && toggle && onLabel && offLabel && showreel) {
 
   function updateControl() {
     toggle.hidden = false;
-    toggle.toggleAttribute('data-muted', muted);
-    onLabel.hidden = !muted;
-    offLabel.hidden = muted;
-    toggle.setAttribute('aria-labelledby', muted ? onLabel.id : offLabel.id);
+    const inactive = music.paused;
+    toggle.toggleAttribute('data-muted', inactive);
+    onLabel.hidden = !inactive;
+    offLabel.hidden = inactive;
+    toggle.setAttribute('aria-labelledby', inactive ? onLabel.id : offLabel.id);
   }
 
   function playMusic() {
     if (muted || showreel.open || !music.paused) return;
     // Browsers that block autoplay allow another attempt after a visitor interacts.
-    music.play().catch(() => {});
+    music.play().catch(updateControl);
   }
 
   toggle.addEventListener('click', () => {
-    muted = !muted;
+    muted = !music.paused;
     if (muted) music.pause();
     else playMusic();
     updateControl();
@@ -33,9 +34,14 @@ if (music && toggle && onLabel && offLabel && showreel) {
     if (showreel.open) music.pause();
   }).observe(showreel, { attributes: true, attributeFilter: ['open'] });
   showreel.addEventListener('close', playMusic);
-  document.addEventListener('click', playMusic);
+  document.addEventListener('click', (event) => {
+    if (!toggle.contains(event.target)) playMusic();
+  });
   document.addEventListener('keydown', playMusic);
 
+  for (const event of ['play', 'pause', 'error']) {
+    music.addEventListener(event, updateControl);
+  }
   updateControl();
   playMusic();
 }

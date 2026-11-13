@@ -440,6 +440,220 @@
     "manual": true
   },
   {
+    "id": "curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas",
+    "title": "Curta-Metragem - Batuque das Montanhas",
+    "category": "Motion Design",
+    "year": "2024",
+    "client": "",
+    "tools": "",
+    "description": "",
+    "cover": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/batuque.gif",
+    "behance": "https://www.behance.net/gallery/212500291/Curta-Metragem-Batuque-das-Montanhas",
+    "modules": [
+      {
+        "type": "image",
+        "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/batuque-topo.png",
+        "alt": "Batuque das Montanhas"
+      },
+      {
+        "type": "embed",
+        "src": "https://www.youtube-nocookie.com/embed/hbvDhlJQn5M",
+        "title": "Assistir ao curta"
+      },
+      {
+        "type": "prose",
+        "text": "O curta reúne música, dança e cultura para retratar a identidade local e ancestral de Teresópolis. Realizado em 2024 com a prefeitura e apoio da Lei Paulo Gustavo, o projeto contou com minha atuação na animação principal, nos rigs, no storyboard, nos efeitos visuais e na composição."
+      },
+      {
+        "type": "text",
+        "heading": "Storyboard e animatic"
+      },
+      {
+        "type": "prose",
+        "text": "Mais de 260 desenhos ajudaram a planejar as cenas e a definir o ritmo e a emoção do curta."
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics01.png",
+            "alt": "Storyboard 01"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics02.png",
+            "alt": "Storyboard 02"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics03.png",
+            "alt": "Storyboard 03"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics04.png",
+            "alt": "Storyboard 04"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics05.png",
+            "alt": "Storyboard 05"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics06.png",
+            "alt": "Storyboard 06"
+          }
+        ]
+      },
+      {
+        "type": "embed",
+        "src": "https://www-ccv.adobe.io/v1/player/ccv/PZUY-VUCM6m/embed?api_key=behance1&bgcolor=%23191919",
+        "title": "Animatic do curta"
+      },
+      {
+        "type": "prose",
+        "text": "Algumas cenas mudaram ou ficaram fora do animatic enquanto a trilha ainda estava em produção."
+      },
+      {
+        "type": "text",
+        "heading": "Rigging"
+      },
+      {
+        "type": "prose",
+        "text": "Os rigs deram mais controle sobre os movimentos dos personagens e agilizaram a animação."
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-01.gif",
+            "alt": "Processo de rigging 01"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-02.gif",
+            "alt": "Processo de rigging 02"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-03.gif",
+            "alt": "Processo de rigging 03"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-04.gif",
+            "alt": "Processo de rigging 04"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-05.gif",
+            "alt": "Processo de rigging 05"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Animação e VFX"
+      },
+      {
+        "type": "gallery",
+        "uniform": true,
+        "items": [
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-01.gif",
+            "alt": "Animação e VFX 01"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-02.gif",
+            "alt": "Animação e VFX 02"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-03.gif",
+            "alt": "Animação e VFX 03"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-04.gif",
+            "alt": "Animação e VFX 04"
+          },
+          {
+            "type": "image",
+            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-05.gif",
+            "alt": "Animação e VFX 05"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Créditos"
+      },
+      {
+        "type": "credits",
+        "items": [
+          {
+            "role": "Direção",
+            "name": "@outropinto",
+            "href": "https://www.instagram.com/outropinto/"
+          },
+          {
+            "role": "Direção",
+            "name": "@unocriativo",
+            "href": "https://www.instagram.com/unocriativo/"
+          },
+          {
+            "role": "Direção de dublagem",
+            "name": "@vcn.wega",
+            "href": "https://www.instagram.com/vcn.wega/"
+          },
+          {
+            "role": "Roteiro",
+            "name": "Beatriz Rhaddour"
+          },
+          {
+            "role": "Assistente de roteiro",
+            "name": "Janaina Mendes"
+          },
+          {
+            "role": "Storyboard, animação e VFX",
+            "name": "Bruno Baddini"
+          },
+          {
+            "role": "Composição",
+            "name": "Bruno Baddini"
+          },
+          {
+            "role": "Composição",
+            "name": "@vcn.wega",
+            "href": "https://www.instagram.com/vcn.wega/"
+          },
+          {
+            "role": "Sonoplastia",
+            "name": "@baddinidad",
+            "href": "https://www.instagram.com/baddinidad/"
+          },
+          {
+            "role": "Produção executiva",
+            "name": "@carol.mbandeira",
+            "href": "https://www.instagram.com/carol.mbandeira/"
+          },
+          {
+            "role": "Arte conceitual e design",
+            "name": "Murilo Domeio"
+          }
+        ]
+      }
+    ],
+    "layout": "batuque"
+  },
+  {
     "id": "dot-energy-dot-energy",
     "title": "DOT ENERGY",
     "category": "Motion Design",
@@ -694,219 +908,5 @@
     "external": false,
     "manual": true,
     "layout": "monify"
-  },
-  {
-    "id": "curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas",
-    "title": "Curta-Metragem - Batuque das Montanhas",
-    "category": "Motion Design",
-    "year": "2024",
-    "client": "",
-    "tools": "",
-    "description": "",
-    "cover": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/batuque.gif",
-    "behance": "https://www.behance.net/gallery/212500291/Curta-Metragem-Batuque-das-Montanhas",
-    "modules": [
-      {
-        "type": "image",
-        "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/batuque-topo.png",
-        "alt": "Batuque das Montanhas"
-      },
-      {
-        "type": "embed",
-        "src": "https://www.youtube-nocookie.com/embed/hbvDhlJQn5M",
-        "title": "Assistir ao curta"
-      },
-      {
-        "type": "prose",
-        "text": "O curta reúne música, dança e cultura para retratar a identidade local e ancestral de Teresópolis. Realizado em 2024 com a prefeitura e apoio da Lei Paulo Gustavo, o projeto contou com minha atuação na animação principal, nos rigs, no storyboard, nos efeitos visuais e na composição."
-      },
-      {
-        "type": "text",
-        "heading": "Storyboard e animatic"
-      },
-      {
-        "type": "prose",
-        "text": "Mais de 260 desenhos ajudaram a planejar as cenas e a definir o ritmo e a emoção do curta."
-      },
-      {
-        "type": "gallery",
-        "uniform": true,
-        "items": [
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics01.png",
-            "alt": "Storyboard 01"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics02.png",
-            "alt": "Storyboard 02"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics03.png",
-            "alt": "Storyboard 03"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics04.png",
-            "alt": "Storyboard 04"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics05.png",
-            "alt": "Storyboard 05"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animatics06.png",
-            "alt": "Storyboard 06"
-          }
-        ]
-      },
-      {
-        "type": "embed",
-        "src": "https://www-ccv.adobe.io/v1/player/ccv/PZUY-VUCM6m/embed?api_key=behance1&bgcolor=%23191919",
-        "title": "Animatic do curta"
-      },
-      {
-        "type": "prose",
-        "text": "Algumas cenas mudaram ou ficaram fora do animatic enquanto a trilha ainda estava em produção."
-      },
-      {
-        "type": "text",
-        "heading": "Rigging"
-      },
-      {
-        "type": "prose",
-        "text": "Os rigs deram mais controle sobre os movimentos dos personagens e agilizaram a animação."
-      },
-      {
-        "type": "gallery",
-        "uniform": true,
-        "items": [
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-01.gif",
-            "alt": "Processo de rigging 01"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-02.gif",
-            "alt": "Processo de rigging 02"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-03.gif",
-            "alt": "Processo de rigging 03"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-04.gif",
-            "alt": "Processo de rigging 04"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/process-05.gif",
-            "alt": "Processo de rigging 05"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "heading": "Animação e VFX"
-      },
-      {
-        "type": "gallery",
-        "uniform": true,
-        "items": [
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-01.gif",
-            "alt": "Animação e VFX 01"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-02.gif",
-            "alt": "Animação e VFX 02"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-03.gif",
-            "alt": "Animação e VFX 03"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-04.gif",
-            "alt": "Animação e VFX 04"
-          },
-          {
-            "type": "image",
-            "src": "images/projects/curta-metragem-batuque-das-montanhas-curta-metragem-batuque-das-montanhas/animation-05.gif",
-            "alt": "Animação e VFX 05"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "heading": "Créditos"
-      },
-      {
-        "type": "credits",
-        "items": [
-          {
-            "role": "Direção",
-            "name": "@outropinto",
-            "href": "https://www.instagram.com/outropinto/"
-          },
-          {
-            "role": "Direção",
-            "name": "@unocriativo",
-            "href": "https://www.instagram.com/unocriativo/"
-          },
-          {
-            "role": "Direção de dublagem",
-            "name": "@vcn.wega",
-            "href": "https://www.instagram.com/vcn.wega/"
-          },
-          {
-            "role": "Roteiro",
-            "name": "Beatriz Rhaddour"
-          },
-          {
-            "role": "Assistente de roteiro",
-            "name": "Janaina Mendes"
-          },
-          {
-            "role": "Storyboard, animação e VFX",
-            "name": "Bruno Baddini"
-          },
-          {
-            "role": "Composição",
-            "name": "Bruno Baddini"
-          },
-          {
-            "role": "Composição",
-            "name": "@vcn.wega",
-            "href": "https://www.instagram.com/vcn.wega/"
-          },
-          {
-            "role": "Sonoplastia",
-            "name": "@baddinidad",
-            "href": "https://www.instagram.com/baddinidad/"
-          },
-          {
-            "role": "Produção executiva",
-            "name": "@carol.mbandeira",
-            "href": "https://www.instagram.com/carol.mbandeira/"
-          },
-          {
-            "role": "Arte conceitual e design",
-            "name": "Murilo Domeio"
-          }
-        ]
-      }
-    ],
-    "layout": "batuque"
   }
 ]

@@ -47,10 +47,13 @@ em { color: var(--red); font-style: normal; }
 .availability::before { content: ""; width: .48rem; aspect-ratio: 1; border-radius: 50%; background: var(--red); animation: pulse 2.5s infinite; }
 @keyframes pulse { 50% { box-shadow: 0 0 0 .3rem #e52e2e30; } }
 .menu-button { min-height: 2.5rem; padding: .35rem .65rem; background: transparent; color: inherit; border: 1px solid currentColor; white-space: nowrap; }
-.menu-button:hover { background: var(--red); color: var(--ink); }
+@media (hover: hover) {
+  .menu-button:hover { background: var(--red); color: var(--ink); }
+}
 .menu-button span { margin-left: .25rem; }
 .top-actions { display: flex; align-items: center; gap: .4rem; }
-.music-button { display: grid; place-items: center; min-width: 2.5rem; padding: 0; }
+.music-button { display: grid; place-items: center; min-width: 44px; min-height: 44px; padding: 0; touch-action: manipulation; cursor: pointer; }
+.music-button svg { pointer-events: none; }
 .music-off-mark { display: none; }
 .music-button[data-muted] .music-off-mark { display: block; }
 @media (max-width: 1040px) {
@@ -121,12 +124,11 @@ em { color: var(--red); font-style: normal; }
   .project-preview { transition: grid-template-rows 300ms ease-out, opacity 220ms ease-out; }
 }
 
-.contact { background: var(--red); color: var(--ink); border-block: 2px solid var(--ink); overflow: hidden; }
+.contact { position: relative; background: var(--red); color: var(--ink); border-block: 2px solid var(--ink); overflow: hidden; }
 .contact .wrap { position: relative; padding-block: clamp(2rem, 6vw, 6rem); }
 .contact h2 { color: var(--white); position: relative; z-index: 1; font-size: clamp(3.5rem, 11vw, 11rem); max-width: 74%; }
 .contact-link { position: relative; z-index: 1; display: inline-block; margin-top: 1rem; }
 .contact-link:hover { color: var(--white); }
-.contact-mascot { position: absolute; right: var(--pad); bottom: -8%; width: min(32%, 26rem); transform: rotate(-12deg); }
 .footer { background: var(--ink); color: var(--white); padding-block: clamp(2rem, 5vw, 4rem) 1rem; }
 .footer-title { font: 400 clamp(2.2rem, 5.2vw, 5rem)/.9 var(--display); text-transform: uppercase; }
 .footer-links, .footer-base, .menu-links { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .65rem 1.2rem; }
@@ -368,17 +370,22 @@ dialog::backdrop { background: #0d0d0de0; }
 #work { padding-top: clamp(2rem, 5vw, 4.5rem); }
 #work h2 { font-size: clamp(2.35rem, 5vw, 4.8rem); margin-bottom: 1.5rem; }
 #work .filters:empty { display: none; }
-.contact-mascot { --mascot-peek: 39%; right: max(-2.5rem, calc(var(--pad) - 5rem)); bottom: 0; width: min(37%, 29rem); transform: translate(var(--mascot-slide, 0px), var(--mascot-peek)) rotate(-14deg); pointer-events: none; }
-.contact-mascot { opacity: 1; }
-.contact-link:hover + .contact-mascot { opacity: 0; }
-@media (prefers-reduced-motion: no-preference) {
-  .contact-mascot { transition: transform 250ms ease-out, opacity 250ms ease-out; }
-  .contact-link:hover + .contact-mascot {
-    --mascot-slide: calc(110% + var(--pad) + max(0px, 50vw - 52.5rem));
-  }
+.contact-mascot {
+  --mascot-peek: 39%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(37%, 29rem);
+  transform: translate(var(--mascot-slide, 24%), var(--mascot-peek)) rotate(-14deg);
+  pointer-events: none;
+  opacity: 1;
+  transition: transform 250ms ease-out, opacity 250ms ease-out;
 }
-@media (any-hover: none) and (pointer: coarse) {
-  .contact-link:hover + .contact-mascot { --mascot-slide: 0px; opacity: 1; }
+@media (hover: hover) {
+  .contact:has(.contact-link:hover) .contact-mascot { opacity: 0; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .contact:has(.contact-link:hover) .contact-mascot { --mascot-slide: 110%; }
 }
 .case-back { margin-left: auto; text-align: right; }
 .case-main.is-weirdo .case-banner { padding: clamp(.5rem, 3vw, 2rem); background: var(--red); object-fit: contain; }
@@ -395,7 +402,7 @@ dialog::backdrop { background: #0d0d0de0; }
   .hero h1 span { display: inline; }
   .hero-lead { padding-top: .75rem; }
   .case-back { max-width: 32%; font-size: .61rem; }
-  .contact-mascot { --mascot-peek: 32%; right: -.5rem; width: min(47%, 16rem); }
+  .contact-mascot { --mascot-peek: 32%; width: min(47%, 16rem); }
 }
 
 .hero { padding-top: 0; }

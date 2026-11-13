@@ -302,7 +302,11 @@ async function syncBehanceProjects() {
       .filter((item) => item && item.manual === true)
       .map((item) => [item.behance || item.id, item])
   ).values()];
-  const merged = [...manualProjects, ...collected];
+  const existingOrder = new Map(safeExisting.map((item, index) => [item?.id, index]));
+  const merged = [...manualProjects, ...collected].sort((first, second) =>
+    (existingOrder.get(first.id) ?? safeExisting.length) -
+    (existingOrder.get(second.id) ?? safeExisting.length)
+  );
 
   if (!merged.length) {
     throw new Error('Nenhum projeto válido foi coletado. O arquivo atual foi preservado.');

@@ -1,5 +1,5 @@
 import { localize, translate } from './language.js?v=batuque';
-import { loadProjects, assetPath, escapeHtml as html } from './projects.js?v=batuque';
+import { loadProjects, assetPath, escapeHtml as html } from './projects.js?v=work-order';
 
 const root = document.getElementById('case');
 const projectId = new URLSearchParams(location.search).get('id') || 'weirdo';
