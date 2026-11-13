@@ -1,4 +1,4 @@
-import { localize, translate } from './language.js?v=about-intro';
+import { localize, translate } from './language.js?v=about-heading';
 import './hero.js?v=about-intro';
 import './music.js?v=autoplay';
 import { loadProjects, assetPath } from './projects.js?v=gif-covers';

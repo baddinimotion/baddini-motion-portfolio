@@ -82,7 +82,7 @@ const entries = [
   ['Retomar faixa', 'Resume ticker'],
   ['O essencial', 'The short version'],
   ['Boas ideias.', 'Good ideas.'],
-  ['Mau comportamento.', 'Bad behavior.'],
+  ['Mau comportamento.', 'Questionable methods.'],
   ['Ótimo motion.', 'Great motion.'],
   ['Ver showreel', 'Play reel'],
   ['Quem é Baddini?', 'Who is Baddini?'],
